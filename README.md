@@ -1,5 +1,13 @@
 # AMSA Ayurvedic — Keshya Hair Oil
 
+## Ingredient directory
+
+`/ingredients` displays all 52 distinct names supplied by the brand. Hibiscus rosa-sinensis is shown once at the owner's request. `lib/ingredients.ts` preserves supplied spelling and order; the count is derived from the data. Home navigation, the formulation preview and the product accordion link to the directory.
+
+`components/IngredientsExplorer.tsx` offers live name search, initial-letter filters, formulation/alphabetical sorting, card/list views, GSAP entrance and result animations, keyboard-accessible controls and reduced-motion support. The cart is available on this page and shares its saved quantity with the storefront. `app/ingredients.css` contains the directory design.
+
+Content and search/filter/sort behavior are checked independently, along with every rendered name and link. Browser visual QA for this change was unavailable because browser automation rejected the local preview under its security policy.
+
 Responsive Next.js App Router storefront using React, Tailwind CSS v4, GSAP ScrollTrigger and @gsap/react. Frontend only; no payment, email or order service is connected.
 
 ## Run

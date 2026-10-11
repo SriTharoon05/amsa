@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { MoveDown } from 'lucide-react';
+import { ingredientCount } from '@/lib/ingredients';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const layers = ['/isolated_background.png', '/isolated_bottle.png', '/foreground-complete.png'];
 export default function Hero() {
@@ -53,11 +54,11 @@ export default function Hero() {
     <h1>A return to<br/>your <em>roots.</em></h1>
     <p className="hero-description">Ancient wisdom. Everyday care.<br/>Meet a hair ritual that brings you back to yourself.</p>
     <a className="button" href="#shop">Discover Keshya</a>
-    <span className="hero-caption">18 Ayurvedic herbs. One thoughtful ritual.</span>
+    <span className="hero-caption">{ingredientCount} ingredients. One thoughtful ritual.</span>
    </div>
    <div className="hero-reveal">
     <p className="eyebrow">AMSA Ayurvedic.</p><h2>Keshya<br/><em>Hair Oil.</em></h2>
-    <p className="herb-line">Infused with 18 Ayurvedic Herbs<br/>& Fresh Coconut Oil.</p>
+    <p className="herb-line">A thoughtful blend of {ingredientCount} ingredients.<br/>Rooted in nature. Made for you.</p>
     <a className="text-link" href="#shop">Find your daily ritual</a>
    </div>
   </div>
