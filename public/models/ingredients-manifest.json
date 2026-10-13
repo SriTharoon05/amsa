@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "assets": {
     "product": "/models/keshya.glb",
     "botanicals": "/models/botanicals.glb"
@@ -14,8 +14,71 @@
   },
   "compression": {
     "extension": "EXT_meshopt_compression",
-    "attributes": "lossless; no position, normal or UV quantization",
-    "simplification": false
+    "attributes": "Adaptive 13\u201316-bit exponential positions (\u22640.00005-unit component error); 12-bit octahedral normals; normalized 16-bit UVs; lossless colors and triangle connectivity",
+    "precisionBits": {
+      "POSITION": {
+        "minimum": 13,
+        "maximum": 16,
+        "maximumComponentError": 5e-05
+      },
+      "NORMAL": 12,
+      "TEXCOORD_0": 16
+    },
+    "simplification": false,
+    "textureResolutionChanged": false,
+    "vertexAndTriangleOrderPreserved": true,
+    "embeddedTextureBytesPreserved": true,
+    "totalBeforeBytes": 5200376,
+    "totalAfterBytes": 3182532,
+    "triangleCounting": "triangleCount sums every glTF primitive index count; uniqueIndexBufferTriangleCount counts each stored index buffer once. Shared index buffers do not simplify or remove triangles.",
+    "assets": {
+      "keshya": {
+        "beforeBytes": 1229312,
+        "afterBytes": 841448,
+        "savedPercent": 31.55,
+        "geometryBeforeBytes": 505952,
+        "geometryAfterBytes": 114681,
+        "vertexCount": 11587,
+        "triangleCount": 22528,
+        "uniqueIndexBufferTriangleCount": 22528,
+        "meshDefinitions": 5,
+        "primitiveDefinitions": 5,
+        "maximumComponentError": {
+          "POSITION": 3.045797348022461e-05,
+          "NORMAL": 0.000771390032745678,
+          "TEXCOORD_0": 7.634478002088718e-06
+        },
+        "maximumNormalAngleDegrees": 0.04949945738019795,
+        "positionMantissaBitsByView": {
+          "16": 5
+        },
+        "embeddedTextureBytesPreserved": true
+      },
+      "botanicals": {
+        "beforeBytes": 3971064,
+        "afterBytes": 2341084,
+        "savedPercent": 41.05,
+        "geometryBeforeBytes": 3151911,
+        "geometryAfterBytes": 1509542,
+        "vertexCount": 89393,
+        "triangleCount": 146142,
+        "uniqueIndexBufferTriangleCount": 131840,
+        "meshDefinitions": 54,
+        "primitiveDefinitions": 56,
+        "maximumComponentError": {
+          "POSITION": 3.0517578125e-05,
+          "NORMAL": 0.0008967897176895279,
+          "TEXCOORD_0": 7.634478002088718e-06
+        },
+        "maximumNormalAngleDegrees": 0.05790345035112616,
+        "positionMantissaBitsByView": {
+          "14": 46,
+          "15": 7,
+          "16": 3
+        },
+        "embeddedTextureBytesPreserved": true
+      }
+    }
   },
   "entries": [
     {

@@ -7,6 +7,7 @@ import { CartProvider, useCart } from './CartProvider';
 import Cart, { Quantity } from './Cart';
 import Checkout from './Checkout';
 import Hero from './Hero';
+import ProductModel from './ProductModel';
 import { ingredientCount } from '@/lib/ingredients';
 import { money, product } from '@/lib/product';
 
@@ -56,10 +57,8 @@ function Product() {
   const [quantity, setQuantity] = useState(1);
 
   return <section className="product-section section-pad" id="shop" aria-labelledby="product-title">
-    <div className="product-portrait section-reveal">
-      <div className="portrait-topline"><span>THE DAILY RITUAL</span><span>01 / KESHYA</span></div>
-      <img src={product.image} alt="AMSA Keshya Hair Oil in an amber glass bottle, with a bowl of botanicals" loading="lazy" decoding="async" width={1086} height={1448}/>
-      <div className="portrait-bottomline"><span>NATURE, IN YOUR HANDS.</span><span>{product.size}</span></div>
+    <div className="product-portrait product-model-portrait section-reveal">
+      <ProductModel/>
     </div>
     <div className="product-details section-reveal">
       <p className="eyebrow"><span className="editorial-dot"/> THE JOURNEY BECOMES A RITUAL</p>
