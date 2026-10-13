@@ -1,68 +1,37 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { MoveDown } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import { ArrowDown, ArrowUpRight, Leaf } from 'lucide-react';
 import { ingredientCount } from '@/lib/ingredients';
-gsap.registerPlugin(useGSAP, ScrollTrigger);
-const layers = ['/isolated_background.png', '/isolated_bottle.png', '/foreground-complete.png'];
+import { getJourneyProgress, getJourneyChapter } from '@/lib/journey';
+const JourneyScene = dynamic(() => import('./JourneyScene'), { ssr: false });
+const chapters = ['The roots', 'The botanicals', 'The blend', 'The transformation', 'Your ritual'];
+function BotanicalFallback() {
+ return <div className="journey-fallback" aria-hidden="true"><div className="fallback-orbit"/>
+ <svg className="fallback-botanical" viewBox="0 0 460 540" fill="none"><path d="M226 455C278 337 167 192 266 75" stroke="#677047" strokeWidth="3"/>{[0,1,2,3,4].map(i => <g key={i} transform={`translate(${226 + Math.sin(i)*22} ${390-i*60}) rotate(${i%2 ? -45 : 40})`}><path d="M0 0C-95-8-112-66-104-108C-41-86 3-47 0 0Z" fill={i%2 ? '#76825b' : '#a0aa7f'}/><path d="M0 0L-89-92" stroke="#455535" strokeWidth="1"/></g>)}<circle cx="328" cy="353" r="33" fill="#a26d46"/><circle cx="328" cy="353" r="26" fill="#faf4e6"/><g transform="translate(115 195)">{[0,1,2,3,4].map(i => <ellipse key={i} rx="15" ry="40" cy="-25" fill="#9a4947" transform={`rotate(${i*72})`}/>)}<circle r="9" fill="#d8b66c"/></g></svg>
+ <div className="fallback-bottle"><div className="fallback-cap"/><div className="fallback-body"><div className="fallback-label"><Leaf size={28} strokeWidth={1}/><b>AMSA</b><span>AYURVEDIC</span><i>Keshya<br/>Hair Oil</i><small>100 ml</small></div></div></div></div>;
+}
 export default function Hero() {
- const root = useRef<HTMLElement>(null);
- const [layered, setLayered] = useState(false);
+ const root=useRef<HTMLElement>(null), stage=useRef<HTMLDivElement>(null), progress=useRef(0);
+ const [chapter,setChapter]=useState(0), [sceneState,setSceneState]=useState<'loading'|'ready'|'fallback'>('loading'), [loadScene,setLoadScene]=useState(false);
  useEffect(() => {
-  let active = true;
-  Promise.all(layers.map(src => new Promise<void>((resolve, reject) => {
-   const image = new Image(); image.onload = () => resolve(); image.onerror = reject; image.src = src;
-  }))).then(() => { if (active) setLayered(true); }).catch(() => {});
-  return () => { active = false; };
- }, []);
- useGSAP(() => {
-  const media = gsap.matchMedia();
-  media.add({ motion: '(prefers-reduced-motion: no-preference)', mobile: '(max-width: 700px)' }, context => {
-   const { motion, mobile } = context.conditions!;
-   if (!motion) return;
-   const timeline = gsap.timeline({ defaults: { ease: 'none', duration: 1 }, scrollTrigger: {
-    id: 'amsa-hero', trigger: root.current, start: 'top top', end: () => `+=${window.innerHeight * 1.6}`,
-    pin: true, scrub: true, anticipatePin: 1, invalidateOnRefresh: true,
-   } });
-   // Bounded local layers keep the bottle's full silhouette visible throughout the scroll.
-   if (layered) {
-    timeline.fromTo('.hero-backdrop', { y: 0, scale: 1 }, { y: -12, scale: 1.025 }, 0)
-     .fromTo('.product-float', { y: mobile ? 12 : 24, scale: .88, rotation: -4 }, { y: mobile ? -12 : -30, scale: 1, rotation: 2 }, 0)
-     .fromTo('.foreground-float', { y: 0, scale: .96 }, { y: mobile ? 28 : 65, scale: 1.04 }, 0);
-   } else timeline.fromTo('.hero-source', { scale: 1 }, { scale: 1.035 }, 0);
-   timeline.to('.hero-opening', { autoAlpha: 0, y: -28, duration: .23 }, .12)
-    .fromTo('.hero-reveal', { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: .3 }, .42)
-    .fromTo('.hero-reveal .herb-line', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: .2 }, .66)
-    .fromTo('.scroll-line', { scaleY: 0 }, { scaleY: 1 }, 0);
-  });
-  return () => media.revert();
- }, { scope: root, dependencies: [layered], revertOnUpdate: true });
- return <section ref={root} className="hero" id="home" aria-label="Discover Keshya Hair Oil">
-  <div className={`hero-art ${layered ? 'ready' : ''}`} aria-hidden="true">
-   <img className="hero-source" src="/image_1.png" alt="" fetchPriority="high" width="1086" height="1448"/>
-   {layered && <><div className="hero-backdrop"/><div className="product-stage">
-    <div className="product-float"><img src="/isolated_bottle.png" alt="" width="1086" height="1448"/></div>
-    <div className="foreground-float"><img src="/foreground-complete.png" alt=""/></div>
-   </div></>}
-  </div>
-  <div className="hero-shade"/>
-  <div className="hero-copy">
-   <div className="hero-opening">
-    <p className="eyebrow hero-eyebrow"><span className="tiny-rule"/>WISDOM, ROOTED IN NATURE</p>
-    <h1>A return to<br/>your <em>roots.</em></h1>
-    <p className="hero-description">Ancient wisdom. Everyday care.<br/>Meet a hair ritual that brings you back to yourself.</p>
-    <a className="button" href="#shop">Discover Keshya</a>
-    <span className="hero-caption">{ingredientCount} ingredients. One thoughtful ritual.</span>
-   </div>
-   <div className="hero-reveal">
-    <p className="eyebrow">AMSA Ayurvedic.</p><h2>Keshya<br/><em>Hair Oil.</em></h2>
-    <p className="herb-line">A thoughtful blend of {ingredientCount} ingredients.<br/>Rooted in nature. Made for you.</p>
-    <a className="text-link" href="#shop">Find your daily ritual</a>
-   </div>
-  </div>
-  <div className="hero-bottom"><span className="scroll-cue"><MoveDown size={16} strokeWidth={1}/>SCROLL TO UNWIND</span><span>THE ESSENCE OF NATURE · 100 ML</span></div>
-  <div className="scene-progress"><span className="scroll-line"/></div>
- </section>;
+  const schedule=window.setTimeout(()=>setLoadScene(true),80);
+  let frame=0, top=0, height=0;
+  const update=()=>{progress.current=getJourneyProgress(window.scrollY,top,height,window.innerHeight);setChapter(previous=>{const next=getJourneyChapter(progress.current);return previous===next?previous:next;});stage.current?.style.setProperty('--journey-progress',String(progress.current));stage.current?.style.setProperty('--bottle-reveal',String(Math.max(0,Math.min(1,(progress.current-.65)/.16))));window.dispatchEvent(new Event('amsa:journey'));frame=0;};
+  const measure=()=>{if(!root.current)return;const rect=root.current.getBoundingClientRect();top=rect.top+window.scrollY;height=rect.height;update();};
+  const onScroll=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
+  const resize=new ResizeObserver(measure);if(root.current)resize.observe(root.current);
+  window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',measure,{passive:true});measure();
+  return()=>{clearTimeout(schedule);cancelAnimationFrame(frame);resize.disconnect();window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',measure);};
+ },[]);
+ return <section className="journey" id="home" ref={root} aria-label="From nature to Keshya: an illustrated journey">
+ <div ref={stage} className="journey-stage" data-scene-state={sceneState} data-chapter={chapter}><div className="journey-aura"/><div className="journey-art" aria-hidden="true"><BotanicalFallback/>{loadScene&&<JourneyScene progress={progress} onState={setSceneState}/>}<div className="journey-art-caption"><span className="journey-dot"/>A BOTANICAL COMPOSITION<span>AMSA · 01—52</span></div></div><nav className="journey-rail" aria-label="Journey chapters">{chapters.map((name,i)=><a key={name} href={`#journey-${i+1}`} className={chapter===i?'active':''} aria-current={chapter===i?'step':undefined}><span>0{i+1}</span><span>{name}</span></a>)}</nav><div className="journey-scroll-note"><ArrowDown size={14}/> SCROLL TO DISCOVER<span>{String(chapter+1).padStart(2,'0')} / 05</span></div></div>
+ <div className="journey-chapters">
+ <article className="journey-chapter journey-opening" id="journey-1"><div className="journey-copy"><p className="eyebrow"><span/>THE ESSENCE OF NATURE</p><h1>Good things<br/>begin at the<br/><em>roots.</em></h1><p className="journey-description">The Keshya hair oil journey.<br/>A world of botanicals.<br/>A moment that belongs to you.</p><a className="journey-text-link" href="#journey-2">Follow the journey <ArrowDown size={15}/></a></div><span className="journey-side-note">KESHYA HAIR OIL · 100 ML</span></article>
+ <article className="journey-chapter" id="journey-2"><div className="journey-copy"><p className="eyebrow">01 / THE BOTANICALS</p><h2>Many origins.<br/><em>One intention.</em></h2><p className="journey-description">Leaves, flowers, roots and seeds.<br/>{ingredientCount} names come together in the Keshya formulation. Each one has a place in our botanical story.</p><div className="journey-stat"><strong>{ingredientCount}</strong><span>INGREDIENTS<br/>OPENLY SHARED</span></div><Link className="journey-text-link" href="/ingredients">Meet every ingredient <ArrowUpRight size={16}/></Link></div></article>
+ <article className="journey-chapter" id="journey-3"><div className="journey-copy"><p className="eyebrow">02 / THE BLEND</p><h2>Nature finds<br/>its <em>flow.</em></h2><p className="journey-description">From the richness of coconut to a constellation of botanicals. A golden composition, imagined in motion.</p><div className="journey-formula"><span>52 ingredients</span><span>+</span><span>One daily ritual</span></div><p className="journey-small-note">An artistic interpretation of the formulation.</p></div></article>
+ <article className="journey-chapter" id="journey-4"><div className="journey-copy"><p className="eyebrow">03 / THE TRANSFORMATION</p><h2>A little nature.<br/><em>Beautifully held.</em></h2><p className="journey-description">The story comes into focus.<br/>Meet Keshya — AMSA’s Ayurvedic hair oil, made for the quiet moments of everyday care.</p><span className="journey-product-mark">AMSA <span>AYURVEDIC</span></span></div></article>
+ <article className="journey-chapter journey-finale" id="journey-5"><div className="journey-copy"><p className="eyebrow">04 / YOUR RITUAL</p><h2>Back to nature.<br/><em>Back to you.</em></h2><p className="journey-description">Warm a little oil. Slow your breath.<br/>Let a simple massage become a moment of connection.</p><a className="button" href="#shop">Discover Keshya <ArrowUpRight size={17}/></a><span className="journey-finale-note">KESHYA HAIR OIL · 100 ML</span></div></article>
+ </div></section>;
 }

@@ -1,58 +1,49 @@
 # AMSA Ayurvedic — Keshya Hair Oil
 
-## Ingredient directory
+A responsive frontend storefront with a Blender-built 3D botanical journey, an ingredient directory and mock shopping/checkout flows. No payment, order or newsletter backend is connected.
 
-`/ingredients` displays all 52 distinct names supplied by the brand. Hibiscus rosa-sinensis is shown once at the owner's request. `lib/ingredients.ts` preserves supplied spelling and order; the count is derived from the data. Home navigation, the formulation preview and the product accordion link to the directory.
+## Run and verify
 
-`components/IngredientsExplorer.tsx` offers live name search, initial-letter filters, formulation/alphabetical sorting, card/list views, GSAP entrance and result animations, keyboard-accessible controls and reduced-motion support. The cart is available on this page and shares its saved quantity with the storefront. `app/ingredients.css` contains the directory design.
-
-Content and search/filter/sort behavior are checked independently, along with every rendered name and link. Browser visual QA for this change was unavailable because browser automation rejected the local preview under its security policy.
-
-Responsive Next.js App Router storefront using React, Tailwind CSS v4, GSAP ScrollTrigger and @gsap/react. Frontend only; no payment, email or order service is connected.
-
-## Run
-
-```sh
+```
 npm install
 npm run dev
+npm run typecheck
+node scripts/verify-journey.mjs
+npm run build
 ```
 
-Open http://localhost:3000. `npm run build` produces a static deployment in `out/`; serve that directory with any static web host. `npm run typecheck` checks TypeScript.
+The static export is written to `out/`. Hosting identity remains in `.openai/hosting.json`.
 
-## Architecture
+## Scroll experience
 
-- `components/Hero.tsx`: pinned 100svh scroll narrative, scrub:true, background/midground/foreground motion, reduced-motion fallback and atomic image loading.
-- `components/CartProvider.tsx`: React Context cart; add, remove, quantity updates, total calculation, capped quantities and graceful localStorage persistence.
-- `components/Cart.tsx`: slide-in shopping bag and reusable quantity control.
-- `components/Checkout.tsx`: required shipping fields, email/PIN validation, prefilled mock payment and confirmation; clears cart after demo submission.
-- `components/Dialog.tsx`: native modal dialog with focus containment, Escape, backdrop dismissal, focus restoration and body scroll locking.
-- `components/Storefront.tsx`: header, product section, ingredient cards, ritual guide, newsletter demo and post-hero floating CTA.
-- `lib/product.ts`: edit the demo price (INR 1,290), size (100 ml) and product details here.
+`components/Hero.tsx` renders five readable chapters in native document flow. A CSS sticky scene changes with the document scroll; there is no ScrollTrigger pin, nested scroll container, scroll hijacking or duplicate reveal screen. Chapter links and Skip to product let visitors jump through the story.
 
-## One source image, three layers
+`components/JourneyScene.tsx` loads Three.js in a separate client bundle and the two Blender GLBs. All 52 botanical objects gather into an illustrative blending vessel; golden oil becomes a droplet and the bottle assembles with a cap reveal. Camera framing fits both dimensions, including portrait tablets. The renderer uses capped resolution, no shadow-map or postprocessing passes, a procedural contact shadow and request-on-change rendering. It stops when movement settles, when offscreen or when the tab is hidden. GPU resources are disposed on unmount. Reduced-motion preferences use discrete chapter compositions and disable pointer motion. WebGL failure leaves a lightweight SVG/CSS illustration and all content/purchase controls available.
 
-`public/image_1.png` is the single generated product photograph. All scene layers derive from it; no 3D model, stock imagery or alternate product view is used. Your supplied logo is `public/amsa-seal.png`.
+This is an artistic representation of the supplied formulation, not a verified manufacturing process or scientific specimen collection. Botanical models are stylized and share geometric families. The original generated photograph is retained in the product purchase section.
 
-Three image-edit operations automated the segmentation and background inpainting. The existing assets work immediately:
+## Blender assets
 
-1. `public/isolated_background.png`: wall, window and shelf, objects removed.
-2. `public/isolated_bottle.png`: bottle cutout with alpha transparency.
-3. `public/foreground-complete.png`: repaired bowl and jar combined, alpha transparency. Their formerly cropped edges are reconstructed and both objects have transparent padding. The original `isolated_bowl.png` is retained for provenance.
+- `public/models/keshya.glb`: amber bottle, black cap and cream label with mesh lettering. Root `KeshyaBottle`, parts `BottleBody`, `BottleCap`, `BottleLabel`. Y-up, front +Z, height 3.6 units.
+- `public/models/botanicals.glb`: 52 centered groups `Ingredient_01` through `Ingredient_52`, plus `Vessel` and `Oil`. Shared meshes, no textures or external dependencies. Combined GLBs are approximately 748 KB.
+- `public/models/ingredients-manifest.json`: the exact supplied ingredient name associated with each 3D node.
+- `scripts/create-journey-assets.py`: reproducible Blender source generation and GLB export. Run with Blender `--background --python scripts/create-journey-assets.py`.
+- `design-source/amsa-journey.blend`: editable Blender source; preview images alongside it. These source/preview files are not part of the static deployment.
 
-Background and bottle use 1086×1448 canvases. The repaired foreground is 1536×1024 and independently fitted in a bounded product stage; preserve those individual canvas layouts when replacing assets. Do not use cover sizing for transparent subjects, or move source-cropped object edges into the interior of the composition. The hero styles live in `app/hero.css`. Arbitrary new photographs require new masks/inpainting; segmentation is an asset-preparation step rather than a browser effect.
+`node scripts/verify-journey.mjs` validates exact names and model metadata, all 52 nodes, mesh bounds, bottle parts, the asset size budget and scroll boundaries.
 
-The hero preloads all three layers as a group. The bottle fits with contain sizing, moving upward 54px on desktop while scaling from 0.88 to 1 and rotating from -4 to 2 degrees. Foreground moves downward 65px and the background upward 12px, producing relative depth while keeping complete silhouettes inside the scene. Mobile motion is reduced to fit its own stage. Reduced-motion preferences disable pinning and animation. Only transforms and opacity animate.
+## Storefront and ingredients
 
-## Image prompts and provenance
+`components/Storefront.tsx` and `app/storefront.css` provide the fixed header, product purchase controls, botanical index preview, ritual, footer and floating purchase button. The full formulation at `/ingredients` is generated from `lib/ingredients.ts`: 52 unique supplied names, with Hibiscus rosa-sinensis shown once. Search, letter filters, sorting, card/list views and GSAP directory animations remain available.
 
-Built-in ImageGen created the photograph: “Photorealistic AMSA Ayurvedic Keshya Hair Oil amber bottle, black cap, cream/gold label, warm plaster wall and window sunlight, limestone shelf, saffron/cardamom/anise bowl lower left, ivory jar lower right, premium editorial product photography.”
+`CartProvider.tsx` manages quantities and subtotal; only the cart quantity is persisted locally. `Cart.tsx`, `Checkout.tsx` and `Dialog.tsx` provide the shopping drawer, required shipping fields, fixed mock payment, local order confirmation, focus containment, Escape dismissal and focus restoration. Ingredients and homepage share the saved quantity.
 
-Derived edits used that photograph as the sole target: remove and inpaint bottle/bowl/jar for the background; extract bottle with genuine transparency; extract bowl and jar together with genuine transparency. Preserve the full canvas, branding, scale, lighting and positions. These are generated concept assets, not verified commercial product photography.
+`lib/product.ts` contains the editable demo price (INR 1,290), volume (100 ml) and image. Delivery policies and price are concept details that need brand confirmation before real commerce. Checkout does not collect real payment credentials. Shipping fields remain in DOM/component memory. Newsletter signup confirms locally without sending or storing an email.
 
-Foreground repair used built-in ImageGen: reconstruct the missing left edge of the original bowl and right edge of the jar; retain their materials and golden lighting; place the complete objects left and right with transparent padding and an empty center on a 3:2 canvas. Saved as `public/foreground-complete.png`.
+## Verification
 
-## Demo boundaries
+Production compilation, TypeScript and ingredient/model contract checks pass. Blender studio and bottle previews were visually inspected. Browser automation is blocked by its security policy in this environment, so the final browser appearance, scroll motion and actual device frame rates remain unverified. Camera projection and responsive spacing were reviewed mathematically; no speed score is claimed.
 
-Price, volume and complimentary delivery are editable concept details. Product formulation, full INCI list, delivery/return policy and commercial claims need brand confirmation before launch. Checkout uses a fixed test card and never asks for real payment credentials. Shipping fields stay in component DOM memory; only cart quantity is persisted. Newsletter submission displays local confirmation without sending/storing an email. Fonts load from Google Fonts with system fallbacks.
+## Original imagery provenance
 
-Before production commerce: connect a payment provider, order service, inventory and newsletter API, and replace demo copy/policies. No backend is required to explore the current UI.
+The existing product photograph and isolated image layers were generated with ImageGen from the provided AMSA branding. The photograph is a concept asset, not verified commercial product photography. Old photographic parallax layers remain available for provenance but are no longer loaded by the homepage hero. Fonts use Google Fonts with system fallbacks.

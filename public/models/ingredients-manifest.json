@@ -1,0 +1,322 @@
+{
+  "version": 1,
+  "assets": {
+    "product": "/models/keshya.glb",
+    "botanicals": "/models/botanicals.glb"
+  },
+  "note": "Artistic botanical representations supplied for an illustrative ingredient-to-oil story.",
+  "entries": [
+    {
+      "id": 1,
+      "name": "Sesamum indicum",
+      "node": "Ingredient_01",
+      "family": "seed"
+    },
+    {
+      "id": 2,
+      "name": "Nigella sativa",
+      "node": "Ingredient_02",
+      "family": "seed"
+    },
+    {
+      "id": 3,
+      "name": "Ricinus communis",
+      "node": "Ingredient_03",
+      "family": "seed"
+    },
+    {
+      "id": 4,
+      "name": "Tocopherol",
+      "node": "Ingredient_04",
+      "family": "oil drop"
+    },
+    {
+      "id": 5,
+      "name": "Alkanna tinctoria",
+      "node": "Ingredient_05",
+      "family": "root"
+    },
+    {
+      "id": 6,
+      "name": "Senna auriculata",
+      "node": "Ingredient_06",
+      "family": "flower"
+    },
+    {
+      "id": 7,
+      "name": "Jasminum officinale",
+      "node": "Ingredient_07",
+      "family": "flower"
+    },
+    {
+      "id": 8,
+      "name": "Rosa damascena",
+      "node": "Ingredient_08",
+      "family": "flower"
+    },
+    {
+      "id": 9,
+      "name": "Mentha piperita",
+      "node": "Ingredient_09",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 10,
+      "name": "Coriandrum sativum",
+      "node": "Ingredient_10",
+      "family": "seed"
+    },
+    {
+      "id": 11,
+      "name": "Laurus nobilis",
+      "node": "Ingredient_11",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 12,
+      "name": "Piper betle",
+      "node": "Ingredient_12",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 13,
+      "name": "Lawsonia inermis",
+      "node": "Ingredient_13",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 14,
+      "name": "Eclipta prostrata",
+      "node": "Ingredient_14",
+      "family": "flower"
+    },
+    {
+      "id": 15,
+      "name": "Sphagneticola trilobata",
+      "node": "Ingredient_15",
+      "family": "flower"
+    },
+    {
+      "id": 16,
+      "name": "Phyllanthus emblica",
+      "node": "Ingredient_16",
+      "family": "fruit"
+    },
+    {
+      "id": 17,
+      "name": "Mimusops elengi",
+      "node": "Ingredient_17",
+      "family": "flower"
+    },
+    {
+      "id": 18,
+      "name": "Cinnamomum verum",
+      "node": "Ingredient_18",
+      "family": "bark"
+    },
+    {
+      "id": 19,
+      "name": "Matricaria chamomilla",
+      "node": "Ingredient_19",
+      "family": "flower"
+    },
+    {
+      "id": 20,
+      "name": "Santalum album",
+      "node": "Ingredient_20",
+      "family": "root"
+    },
+    {
+      "id": 21,
+      "name": "Artemisia pallens",
+      "node": "Ingredient_21",
+      "family": "flower"
+    },
+    {
+      "id": 22,
+      "name": "Nelumbo nucifera",
+      "node": "Ingredient_22",
+      "family": "flower"
+    },
+    {
+      "id": 23,
+      "name": "Salvia rosmarinus",
+      "node": "Ingredient_23",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 24,
+      "name": "Aloe barbadensis Miller",
+      "node": "Ingredient_24",
+      "family": "succulent"
+    },
+    {
+      "id": 25,
+      "name": "Murraya koenigii",
+      "node": "Ingredient_25",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 26,
+      "name": "Hibiscus rosa-sinensis",
+      "node": "Ingredient_26",
+      "family": "flower"
+    },
+    {
+      "id": 27,
+      "name": "Acalypha indica",
+      "node": "Ingredient_27",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 28,
+      "name": "Ocimum tenuiflorum",
+      "node": "Ingredient_28",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 29,
+      "name": "Prunus dulcis",
+      "node": "Ingredient_29",
+      "family": "seed"
+    },
+    {
+      "id": 30,
+      "name": "Cucurbita pepo",
+      "node": "Ingredient_30",
+      "family": "seed"
+    },
+    {
+      "id": 31,
+      "name": "Ocimum basilicum",
+      "node": "Ingredient_31",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 32,
+      "name": "Capsicum annuum",
+      "node": "Ingredient_32",
+      "family": "fruit"
+    },
+    {
+      "id": 33,
+      "name": "Coffea arabica",
+      "node": "Ingredient_33",
+      "family": "coffee bean"
+    },
+    {
+      "id": 34,
+      "name": "Camellia sinensis",
+      "node": "Ingredient_34",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 35,
+      "name": "Chrysopogon zizanioides",
+      "node": "Ingredient_35",
+      "family": "root"
+    },
+    {
+      "id": 36,
+      "name": "Cassytha filiformis",
+      "node": "Ingredient_36",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 37,
+      "name": "Psoralea corylifolia",
+      "node": "Ingredient_37",
+      "family": "seed"
+    },
+    {
+      "id": 38,
+      "name": "Rubia cordifolia",
+      "node": "Ingredient_38",
+      "family": "root"
+    },
+    {
+      "id": 39,
+      "name": "Azadirachta indica",
+      "node": "Ingredient_39",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 40,
+      "name": "Glycyrrhiza glabra",
+      "node": "Ingredient_40",
+      "family": "root"
+    },
+    {
+      "id": 41,
+      "name": "Cyperus rotundus",
+      "node": "Ingredient_41",
+      "family": "root"
+    },
+    {
+      "id": 42,
+      "name": "Beta vulgaris",
+      "node": "Ingredient_42",
+      "family": "root vegetable"
+    },
+    {
+      "id": 43,
+      "name": "Daucus carota",
+      "node": "Ingredient_43",
+      "family": "flower"
+    },
+    {
+      "id": 44,
+      "name": "Helianthus annuus",
+      "node": "Ingredient_44",
+      "family": "root vegetable"
+    },
+    {
+      "id": 45,
+      "name": "Clitoria ternatea",
+      "node": "Ingredient_45",
+      "family": "leaf sprig"
+    },
+    {
+      "id": 46,
+      "name": "Piper nigrum",
+      "node": "Ingredient_46",
+      "family": "flower"
+    },
+    {
+      "id": 47,
+      "name": "Linum usitatissimum",
+      "node": "Ingredient_47",
+      "family": "seed"
+    },
+    {
+      "id": 48,
+      "name": "Syzygium aromaticum",
+      "node": "Ingredient_48",
+      "family": "seed"
+    },
+    {
+      "id": 49,
+      "name": "Macrotyloma uniflorum",
+      "node": "Ingredient_49",
+      "family": "spice bud"
+    },
+    {
+      "id": 50,
+      "name": "Cinnamomum camphora",
+      "node": "Ingredient_50",
+      "family": "seed"
+    },
+    {
+      "id": 51,
+      "name": "Citrus sinensis",
+      "node": "Ingredient_51",
+      "family": "fruit"
+    },
+    {
+      "id": 52,
+      "name": "Cocos nucifera",
+      "node": "Ingredient_52",
+      "family": "coconut"
+    }
+  ]
+}
