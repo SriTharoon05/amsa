@@ -1,322 +1,386 @@
 {
-  "version": 1,
+  "version": 2,
   "assets": {
     "product": "/models/keshya.glb",
     "botanicals": "/models/botanicals.glb"
   },
-  "note": "Artistic botanical representations supplied for an illustrative ingredient-to-oil story.",
+  "note": "Art-directed botanical specimen representations for an illustrative ingredient-to-oil journey; plant part/extraction is not specified by this illustration.",
+  "texture": {
+    "kind": "shared photographic 3x3 color atlas and tangent surface normal map",
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  "compression": {
+    "extension": "EXT_meshopt_compression",
+    "attributes": "lossless; no position, normal or UV quantization",
+    "simplification": false
+  },
   "entries": [
     {
       "id": 1,
       "name": "Sesamum indicum",
       "node": "Ingredient_01",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Ivory oval sesame seeds, tapered tips and subtle testa texture"
     },
     {
       "id": 2,
       "name": "Nigella sativa",
       "node": "Ingredient_02",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Small angular black cumin seeds with matte ridged coats"
     },
     {
       "id": 3,
       "name": "Ricinus communis",
       "node": "Ingredient_03",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Oval castor seeds with textured coats and raised caruncles"
     },
     {
       "id": 4,
       "name": "Tocopherol",
       "node": "Ingredient_04",
-      "family": "oil drop"
+      "family": "oil drop",
+      "representation": "Amber oil droplets representing tocopherol"
     },
     {
       "id": 5,
       "name": "Alkanna tinctoria",
       "node": "Ingredient_05",
-      "family": "root"
+      "family": "root",
+      "representation": "Irregular branched root fragments"
     },
     {
       "id": 6,
       "name": "Senna auriculata",
       "node": "Ingredient_06",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Five loose yellow petals with differentiated anthers"
     },
     {
       "id": 7,
       "name": "Jasminum officinale",
       "node": "Ingredient_07",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Ivory jasmine star"
     },
     {
       "id": 8,
       "name": "Rosa damascena",
       "node": "Ingredient_08",
-      "family": "flower"
+      "family": "flower",
+      "representation": "35 cupped rose petals arranged in overlapping whorls"
     },
     {
       "id": 9,
       "name": "Mentha piperita",
       "node": "Ingredient_09",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Serrated opposite peppermint leaves"
     },
     {
       "id": 10,
       "name": "Coriandrum sativum",
       "node": "Ingredient_10",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Spherical coriander fruits with longitudinal ribs"
     },
     {
       "id": 11,
       "name": "Laurus nobilis",
       "node": "Ingredient_11",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Smooth leathery lanceolate bay leaves"
     },
     {
       "id": 12,
       "name": "Piper betle",
       "node": "Ingredient_12",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Broad pointed heart-shaped betel leaves"
     },
     {
       "id": 13,
       "name": "Lawsonia inermis",
       "node": "Ingredient_13",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Small paired entire henna leaves"
     },
     {
       "id": 14,
       "name": "Eclipta prostrata",
       "node": "Ingredient_14",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Small white Eclipta ray florets around a pale disk"
     },
     {
       "id": 15,
       "name": "Sphagneticola trilobata",
       "node": "Ingredient_15",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Yellow creeping oxeye daisy with broad ray florets"
     },
     {
       "id": 16,
       "name": "Phyllanthus emblica",
       "node": "Ingredient_16",
-      "family": "fruit"
+      "family": "fruit",
+      "representation": "Two pale green amla fruits with six longitudinal lobes"
     },
     {
       "id": 17,
       "name": "Mimusops elengi",
       "node": "Ingredient_17",
-      "family": "flower"
+      "family": "flower",
+      "representation": "24-point cream white Mimusops corolla"
     },
     {
       "id": 18,
       "name": "Cinnamomum verum",
       "node": "Ingredient_18",
-      "family": "bark"
+      "family": "bark",
+      "representation": "Three rolled papery cinnamon quills with visible spirals"
     },
     {
       "id": 19,
       "name": "Matricaria chamomilla",
       "node": "Ingredient_19",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Chamomile: thin ivory rays and raised golden pollen cone"
     },
     {
       "id": 20,
       "name": "Santalum album",
       "node": "Ingredient_20",
-      "family": "root"
+      "family": "root",
+      "representation": "Irregular branched root fragments"
     },
     {
       "id": 21,
       "name": "Artemisia pallens",
       "node": "Ingredient_21",
-      "family": "flower"
+      "family": "leaf sprig",
+      "representation": "Finely divided silvery davana foliage"
     },
     {
       "id": 22,
       "name": "Nelumbo nucifera",
       "node": "Ingredient_22",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Pointed blush lotus petals in three ascending whorls"
     },
     {
       "id": 23,
       "name": "Salvia rosmarinus",
       "node": "Ingredient_23",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Woody rosemary stem with narrow recurved needle leaves"
     },
     {
       "id": 24,
       "name": "Aloe barbadensis Miller",
       "node": "Ingredient_24",
-      "family": "succulent"
+      "family": "succulent",
+      "representation": "Curved fleshy aloe blades with small pale marginal teeth"
     },
     {
       "id": 25,
       "name": "Murraya koenigii",
       "node": "Ingredient_25",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Pinnate curry leaf stem with eight pointed leaflets"
     },
     {
       "id": 26,
       "name": "Hibiscus rosa-sinensis",
       "node": "Ingredient_26",
-      "family": "flower"
+      "family": "flower",
+      "representation": "Five ruffled crimson hibiscus petals, pollen column and five stigma lobes"
     },
     {
       "id": 27,
       "name": "Acalypha indica",
       "node": "Ingredient_27",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Serrate ovate Acalypha foliage"
     },
     {
       "id": 28,
       "name": "Ocimum tenuiflorum",
       "node": "Ingredient_28",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Opposite scalloped holy basil leaves"
     },
     {
       "id": 29,
       "name": "Prunus dulcis",
       "node": "Ingredient_29",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Three elongated almonds with fine skin furrows and pointed tips"
     },
     {
       "id": 30,
       "name": "Cucurbita pepo",
       "node": "Ingredient_30",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Flat green pumpkin kernels with fine peripheral contours"
     },
     {
       "id": 31,
       "name": "Ocimum basilicum",
       "node": "Ingredient_31",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Broad soft cupped sweet basil leaves"
     },
     {
       "id": 32,
       "name": "Capsicum annuum",
       "node": "Ingredient_32",
-      "family": "fruit"
+      "family": "fruit",
+      "representation": "Tapering curved red chili with folded green calyx"
     },
     {
       "id": 33,
       "name": "Coffea arabica",
       "node": "Ingredient_33",
-      "family": "coffee bean"
+      "family": "coffee bean",
+      "representation": "Roasted coffee beans with sculpted central sutures"
     },
     {
       "id": 34,
       "name": "Camellia sinensis",
       "node": "Ingredient_34",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Serrate glossy tea leaves with alternating attachment"
     },
     {
       "id": 35,
       "name": "Chrysopogon zizanioides",
       "node": "Ingredient_35",
-      "family": "root"
+      "family": "root",
+      "representation": "Fine tangled fibrous root bundle"
     },
     {
       "id": 36,
       "name": "Cassytha filiformis",
       "node": "Ingredient_36",
-      "family": "leaf sprig"
+      "family": "vine",
+      "representation": "Fine twining golden Cassytha filaments and small cream buds"
     },
     {
       "id": 37,
       "name": "Psoralea corylifolia",
       "node": "Ingredient_37",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Dark rugose Psoralea seeds"
     },
     {
       "id": 38,
       "name": "Rubia cordifolia",
       "node": "Ingredient_38",
-      "family": "root"
+      "family": "root",
+      "representation": "Irregular branched root fragments"
     },
     {
       "id": 39,
       "name": "Azadirachta indica",
       "node": "Ingredient_39",
-      "family": "leaf sprig"
+      "family": "leaf sprig",
+      "representation": "Pinnate neem leaflets with serrated pointed margins"
     },
     {
       "id": 40,
       "name": "Glycyrrhiza glabra",
       "node": "Ingredient_40",
-      "family": "root"
+      "family": "root",
+      "representation": "Irregular branched root fragments"
     },
     {
       "id": 41,
       "name": "Cyperus rotundus",
       "node": "Ingredient_41",
-      "family": "root"
+      "family": "root",
+      "representation": "Fine tangled fibrous root bundle"
     },
     {
       "id": 42,
       "name": "Beta vulgaris",
       "node": "Ingredient_42",
-      "family": "root vegetable"
+      "family": "root vegetable",
+      "representation": "Beetroot with irregular taproot and three leaf stalks"
     },
     {
       "id": 43,
       "name": "Daucus carota",
       "node": "Ingredient_43",
-      "family": "flower"
+      "family": "root vegetable",
+      "representation": "Orange carrot root with delicate divided green top"
     },
     {
       "id": 44,
       "name": "Helianthus annuus",
       "node": "Ingredient_44",
-      "family": "root vegetable"
+      "family": "flower",
+      "representation": "Sunflower yellow ray petals and textured dark seed disk"
     },
     {
       "id": 45,
       "name": "Clitoria ternatea",
       "node": "Ingredient_45",
-      "family": "leaf sprig"
+      "family": "flower",
+      "representation": "Butterfly pea broad indigo standard petal and pale throat"
     },
     {
       "id": 46,
       "name": "Piper nigrum",
       "node": "Ingredient_46",
-      "family": "flower"
+      "family": "seed",
+      "representation": "Round wrinkled dark peppercorns"
     },
     {
       "id": 47,
       "name": "Linum usitatissimum",
       "node": "Ingredient_47",
-      "family": "seed"
+      "family": "seed",
+      "representation": "Smooth flattened flax seeds with pointed ends"
     },
     {
       "id": 48,
       "name": "Syzygium aromaticum",
       "node": "Ingredient_48",
-      "family": "seed"
+      "family": "spice bud",
+      "representation": "Five cloves: tapered dark stalks, four sepals and rounded buds"
     },
     {
       "id": 49,
       "name": "Macrotyloma uniflorum",
       "node": "Ingredient_49",
-      "family": "spice bud"
+      "family": "seed",
+      "representation": "Brown oblong horse gram seeds with hilum sutures"
     },
     {
       "id": 50,
       "name": "Cinnamomum camphora",
       "node": "Ingredient_50",
-      "family": "seed"
+      "family": "leaf sprig",
+      "representation": "Smooth pointed leathery camphor leaves"
     },
     {
       "id": 51,
       "name": "Citrus sinensis",
       "node": "Ingredient_51",
-      "family": "fruit"
+      "family": "fruit",
+      "representation": "Orange citrus fruit with gently dimpled rind and leaf"
     },
     {
       "id": 52,
       "name": "Cocos nucifera",
       "node": "Ingredient_52",
-      "family": "coconut"
+      "family": "coconut",
+      "representation": "Hollow coconut half: fibrous husk, testa and thick white endosperm"
     }
   ]
 }

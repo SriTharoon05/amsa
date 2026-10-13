@@ -1,0 +1,24 @@
+{
+  "mode": "Built-in image_gen tool",
+  "purpose": "Native-resolution material maps for actual Blender GLB models",
+  "reference": "C:/Users/assri/Downloads/Amber Keshya Hair Oil Bottle.png",
+  "assets": [
+    {
+      "path": "C:/Users/assri/OneDrive/Documents/All Projects/AMSA/amsa-storefront/design-source/textures/keshya-label-v2.png",
+      "nativeResolution": [
+        887,
+        1774
+      ],
+      "prompt": "Use case: product-mockup. Asset type: high-resolution FLAT PAPER LABEL texture for an actual Blender 3D bottle. Input image is a reference image for the exact AMSA logo, cream handmade paper, lettering, herbal illustration and arrangement. Generate only the front paper label completely flattened into a rectangular vertical sheet, NOT a bottle, no perspective, no curved edges, no shadow, no cap, no glass, no background margins. Match the reference label's premium natural fibrous cream paper, warm golden lotus emblem centered at top, large elegant dark brown AMSA serif wordmark, thin gold horizontal rule, spaced AYURVEDIC, delicately detailed realistic muted green/gold botanical engraving with stems and leaves in center, product name Keshya Hair Oil in elegant serif, thin decorative gold separator, subtitle in italic serif, then volume at bottom. Exact text from top to bottom: 'AMSA', 'AYURVEDIC', 'Keshya Hair Oil', '52 Ingredients', '100 ml'. Do not write '18 Ayurvedic Herbs'. Preserve the reference logo style and dark brown text. Composition: rectangular vertical flat label, aspect ratio 1:2, premium print-ready maximal high resolution 2048 x 4096 if supported, otherwise highest possible resolution. All words perfectly sharp, readable, accurate. Sheet fills whole frame to all four edges. Even neutral diffuse lighting, real handmade paper grain visible at close view, slight aged ivory warm tone. No 3D lighting baked, no render object, no watermark, no border outside label."
+    },
+    {
+      "path": "C:/Users/assri/OneDrive/Documents/All Projects/AMSA/amsa-storefront/design-source/textures/botanical-atlas-v2.png",
+      "nativeResolution": [
+        1254,
+        1254
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: single high-resolution botanical PBR BASE-COLOR TEXTURE ATLAS for real Blender 3D botanical specimens. Create a precise 3 columns by 3 rows atlas, exactly nine equal square tiles edge-to-edge, no gaps, no borders, no labels, no text. Maximum crisp native resolution 3072x3072 or highest available. Each tile is a near-flat macro photographic crop of the specified real natural surface with neutral even diffuse cross-polarized lighting and no shadows or gloss highlights baked in; high microtexture detail. Row1 left: dark forest green fresh leaf with fine branching veins and cellular grain, main vein vertical; row1 center: softer olive/sage green leaf with delicate vertical branching veins; row1 right: deep hibiscus red crimson petal with subtle longitudinal veins. Row2 left: ivory chamomile/jasmine petal translucent creamy fibers lengthwise; row2 center: blush rose petal with natural soft pink variation and fine petal grain; row2 right: dry cinnamon bark brown with flaky longitudinal fibers. Row3 left: coconut outer shell coarse brown fiber/husk skin, detailed interwoven brown fibers; row3 center: tan almond/seed skin with wrinkled fine pores and irregular grain; row3 right: earthy medicinal root outer surface brown weathered ridges lengthwise. Surface photos must fill each tile completely, a continuous texture crop rather than an isolated object. Do not include whole plants, stems on background, arrangements, circles, spheres, 3D shapes, logos, text or watermark. This is a realistic photogrammetry-style material atlas to wrap onto curved 3D meshes, not a diagram. Luxuriously detailed and believable natural botanical surface imperfections."
+    }
+  ],
+  "implementationNotes": "Native output pixels are retained. No artificial upscaling. Optimized JPEG copies are embedded in GLB. Procedural normal maps were authored as shader data in Blender. Label count follows the 52 unique ingredient names supplied by the owner, rather than the reference's older 18-herb label. Model sources and Cycles renders are distinct from live WebGL output."
+}

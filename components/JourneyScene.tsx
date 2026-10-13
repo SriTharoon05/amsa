@@ -3,13 +3,13 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import {
   Scene, Group, Mesh, Object3D, OrthographicCamera, WebGLRenderer,
-  HemisphereLight, DirectionalLight, MeshStandardMaterial, MeshBasicMaterial,
-  SphereGeometry, TorusGeometry, PlaneGeometry, CanvasTexture,
+  HemisphereLight, DirectionalLight, MeshStandardMaterial, MeshPhysicalMaterial, MeshBasicMaterial,
+  LatheGeometry, Vector2, TorusGeometry, PlaneGeometry, CanvasTexture, Color,
   PMREMGenerator, ACESFilmicToneMapping, SRGBColorSpace, Box3, Vector3,
   type Material, type Texture, type BufferGeometry,
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { ingredientCount } from '@/lib/ingredients';
 import { clamp01, smoothRange } from '@/lib/journey';
 
@@ -23,30 +23,45 @@ export default function JourneyScene({ progress, onState }: Props) {
     const element = host.current;
     if (!element) return;
     let renderer: WebGLRenderer;
-    try { renderer = new WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' }); }
+    try { renderer = new WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' }); }
     catch { onState('fallback'); return; }
     let disposed = false, loaded = false, inView = true, contextHealthy = true, frame = 0;
     let current = progress.current, pointerX = 0, pointerY = 0, x = 0, y = 0;
+    let fullPixelRatio = 1, activePixelRatio = 1, slowFrames = 0, lastFrameTime = 0;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const lowData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     const scene = new Scene();
     const world = new Group(); scene.add(world);
     const camera = new OrthographicCamera(-3, 3, 3, -3, .1, 50);
-    camera.position.set(0, 2.5, 11); camera.lookAt(0, 0, 0);
+    camera.position.set(0, 3.6, 11); camera.lookAt(0, 0, 0);
     renderer.outputColorSpace = SRGBColorSpace;
     renderer.toneMapping = ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.15;
+    renderer.toneMappingExposure = 1;
     renderer.setClearColor(0x000000, 0);
     element.appendChild(renderer.domElement);
     renderer.domElement.setAttribute('aria-hidden', 'true');
-    scene.add(new HemisphereLight(0xfff5dc, 0x757958, 2.3));
-    const key = new DirectionalLight(0xfff2d6, 3.1); key.position.set(-4, 6, 7); scene.add(key);
-    const rim = new DirectionalLight(0xf9ffea, 2.0); rim.position.set(4, 2, -2); scene.add(rim);
-    const environment = new RoomEnvironment();
+    scene.add(new HemisphereLight(0xfff8ed, 0x555d42, .85));
+    const key = new DirectionalLight(0xfff8eb, 2.4); key.position.set(-4, 6, 7); scene.add(key);
+    const rim = new DirectionalLight(0xfffdf3, 1.6); rim.position.set(4, 2, -2); scene.add(rim);
+    const environment = createStudioEnvironment();
     const pmrem = new PMREMGenerator(renderer);
-    const envTarget = pmrem.fromScene(environment, .04);
+    const envTarget = pmrem.fromScene(environment, .008, .1, 100, { size: lowData ? 256 : 512 });
     scene.environment = envTarget.texture;
-    environment.dispose(); pmrem.dispose();
+    scene.environmentIntensity = .9;
+    disposeResources([environment]); pmrem.dispose();
+
+    // An opaque studio backdrop gives clear glass a real surface to refract.
+    // Its edge color matches the page, preserving the continuous cream canvas.
+    const backdropCanvas = document.createElement('canvas'); backdropCanvas.width = backdropCanvas.height = 256;
+    const backdropCtx = backdropCanvas.getContext('2d');
+    if (backdropCtx) {
+      const gradient = backdropCtx.createRadialGradient(128, 128, 5, 128, 128, 125);
+      gradient.addColorStop(0, '#e3e1d1'); gradient.addColorStop(1, '#f4f0e6');
+      backdropCtx.fillStyle = gradient; backdropCtx.fillRect(0, 0, 256, 256);
+    }
+    const backdropTexture = new CanvasTexture(backdropCanvas); backdropTexture.colorSpace = SRGBColorSpace;
+    const backdrop = new Mesh(new PlaneGeometry(1, 1), new MeshBasicMaterial({ map: backdropTexture, toneMapped: false }));
+    const cameraDirection = new Vector3(); scene.add(backdrop);
 
     const botanicals = new Group(); world.add(botanicals);
     const bottle = new Group(); world.add(bottle);
@@ -55,8 +70,8 @@ export default function JourneyScene({ progress, onState }: Props) {
     let cap: Object3D | undefined, oil: Object3D | undefined;
     const loadedScenes: Object3D[] = [];
 
-    const dropMaterial = new MeshStandardMaterial({ color: 0xdba035, metalness: .45, roughness: .16 });
-    const drop = new Mesh(new SphereGeometry(.49, 32, 24), dropMaterial);
+    const dropMaterial = new MeshPhysicalMaterial({ color: 0xf5b83f, metalness: 0, roughness: .075, transmission: .4, thickness: .35, ior: 1.46, clearcoat: 1, clearcoatRoughness: .035 });
+    const drop = new Mesh(new LatheGeometry([[0,-.6],[.26,-.56],[.44,-.32],[.48,-.1],[.43,.14],[.3,.43],[.1,.8],[0,1.1]].map(([radius,height]) => new Vector2(radius,height)), 48), dropMaterial);
     drop.scale.set(.7, 1.22, .7); world.add(drop);
     const ringMaterial = new MeshBasicMaterial({ color: 0xa0a582, transparent: true, opacity: .25, depthWrite: false });
     const halo = new Mesh(new TorusGeometry(2.23, .007, 4, 128), ringMaterial);
@@ -81,6 +96,9 @@ export default function JourneyScene({ progress, onState }: Props) {
       const dissolve = smoothRange(p, .40, .57);
       const bottleReveal = smoothRange(p, .64, .82);
       const capClose = smoothRange(p, .77, .92);
+      camera.position.y = mix(3.6, .8, bottleReveal); camera.lookAt(0, 0, 0);
+      backdrop.position.copy(camera.position).addScaledVector(camera.getWorldDirection(cameraDirection), 20);
+      backdrop.quaternion.copy(camera.quaternion);
       botanicals.rotation.y = p * 1.1 + x * .08;
       botanicals.rotation.z = mix(-.17, .12, gather);
       items.forEach(item => {
@@ -112,10 +130,11 @@ export default function JourneyScene({ progress, onState }: Props) {
       halo.rotation.z = -.33 + p * .8;
       ringMaterial.opacity = .24 * (1 - smoothRange(p, .25, .56)) + .12 * smoothRange(p, .86, 1);
       shadow.scale.setScalar(bottleReveal > .5 ? .72 : vesselShow);
+      shadow.position.y = bottleReveal > .5 ? bottle.position.y - 1.8 * bottle.scale.x - .04 : -1.85;
       world.rotation.y = x * .045; world.rotation.x = y * .025;
       renderer.render(scene, camera);
     };
-    const draw = () => {
+    const draw = (time = performance.now()) => {
       frame = 0;
       if (disposed || !loaded || !inView || !contextHealthy || document.hidden) return;
       const target = clamp01(progress.current);
@@ -124,19 +143,36 @@ export default function JourneyScene({ progress, onState }: Props) {
       x = mix(x, targetX, .13);
       y = mix(y, targetY, .13);
       updateScene(current);
-      if (Math.abs(current - target) > .00015 || Math.abs(x - targetX) > .001 || Math.abs(y - targetY) > .001) frame = requestAnimationFrame(draw);
+      const moving = Math.abs(current - target) > .00015 || Math.abs(x - targetX) > .001 || Math.abs(y - targetY) > .001;
+      if (moving) {
+        if (lastFrameTime && time - lastFrameTime > 30) slowFrames++; else slowFrames = Math.max(0, slowFrames - 1);
+        if (slowFrames >= 8 && activePixelRatio > 1.25) {
+          activePixelRatio = Math.max(1.25, activePixelRatio - .25); renderer.setPixelRatio(activePixelRatio);
+          renderer.transmissionResolutionScale = .8; slowFrames = 0;
+        }
+        lastFrameTime = time; frame = requestAnimationFrame(draw);
+      } else {
+        lastFrameTime = 0; slowFrames = 0;
+        // Restore native display resolution for the settled product close-up.
+        if (activePixelRatio !== fullPixelRatio || renderer.transmissionResolutionScale !== 1) {
+          activePixelRatio = fullPixelRatio; renderer.setPixelRatio(fullPixelRatio);
+          renderer.transmissionResolutionScale = 1; updateScene(current);
+        }
+      }
     };
     const invalidate = () => { if (!frame && loaded && inView && contextHealthy && !document.hidden) frame = requestAnimationFrame(draw); };
     const resize = () => {
       const { width, height } = element.getBoundingClientRect();
       if (!width || !height) return;
       const mobile = window.innerWidth <= 700;
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lowData ? 1 : mobile ? 1.25 : 1.5));
+      fullPixelRatio = lowData ? 1 : Math.min(window.devicePixelRatio || 1, 3);
+      activePixelRatio = fullPixelRatio; renderer.setPixelRatio(fullPixelRatio);
       renderer.setSize(width, height);
       // Fit both dimensions, including tall tablets with a narrow art column.
       const halfHeight = Math.max(mobile ? 2.55 : 3.0, 2.85 * height / width);
       camera.left = -halfHeight * width / height; camera.right = -camera.left;
       camera.top = halfHeight; camera.bottom = -halfHeight; camera.updateProjectionMatrix();
+      backdrop.scale.set(halfHeight * width / height * 2.01, halfHeight * 2.01, 1);
       invalidate();
     };
     const pointer = (event: PointerEvent) => {
@@ -159,12 +195,12 @@ export default function JourneyScene({ progress, onState }: Props) {
     renderer.domElement.addEventListener('webglcontextrestored', contextRestored);
     resize();
 
-    const loader = new GLTFLoader();
+    const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
     const loadAsset = (url: string) => loader.loadAsync(url).then(asset => {
       if (disposed) { disposeResources([asset.scene]); throw new Error('Scene disposed'); }
       loadedScenes.push(asset.scene); return asset;
     });
-    Promise.all([loadAsset('/models/botanicals.glb'), loadAsset('/models/keshya.glb')]).then(([nature, product]) => {
+    Promise.all([loadAsset('/models/botanicals.glb?rev=2'), loadAsset('/models/keshya.glb?rev=2')]).then(async ([nature, product]) => {
       if (disposed) { disposeResources(loadedScenes); return; }
       for (let i = 1; i <= ingredientCount; i++) {
         const object = nature.scene.getObjectByName(`Ingredient_${String(i).padStart(2, '0')}`);
@@ -179,8 +215,23 @@ export default function JourneyScene({ progress, onState }: Props) {
       if (!vessel || !oil || !productRoot) throw new Error('Incomplete journey assets');
       blending.add(vessel, oil); oil.position.y = .235;
       bottle.add(productRoot); cap = productRoot.getObjectByName('BottleCap');
+      // Preserve all native texture pixels and keep lettering crisp at oblique angles.
+      const textures = new Set<Texture>();
+      loadedScenes.forEach(asset => asset.traverse(child => {
+        if (!(child instanceof Mesh)) return;
+        (Array.isArray(child.material) ? child.material : [child.material]).forEach(material => {
+          Object.values(material).forEach(value => { if (value && typeof value === 'object' && 'isTexture' in value) textures.add(value as Texture); });
+        });
+      }));
+      textures.forEach(texture => {
+        texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy()); texture.needsUpdate = true;
+        if (contextHealthy) renderer.initTexture(texture);
+      });
       // Center the complete silhouette without cropping or hiding label/cap parts.
       const center = new Box3().setFromObject(productRoot).getCenter(new Vector3()); productRoot.position.sub(center);
+      // Prepare the glass and textured botanical shaders before scroll reveals them.
+      if (contextHealthy) await renderer.compileAsync(scene, camera);
+      if (disposed) return;
       loaded = true; current = progress.current;
       if (contextHealthy) { updateScene(current); onState('ready'); invalidate(); }
     }).catch(() => { if (!disposed) onState('fallback'); });
@@ -194,6 +245,25 @@ export default function JourneyScene({ progress, onState }: Props) {
     };
   }, [progress, onState]);
   return <div className="journey-canvas" ref={host}/>;
+}
+
+function createStudioEnvironment() {
+  const studio = new Scene(); studio.background = new Color(0x797c73);
+  const panels: [number, number, number, number, number, number][] = [
+    [-4, 1.2, 4, 1.05, 6, 5], [4, .8, 3.5, .7, 5.5, 4],
+    [-1.6, 5, -1, 4, 2, 3], [0, 1, -5, 3.3, 4.8, 2.5],
+    [0, 5.5, 1.5, 4.5, 2.5, 2],
+  ];
+  panels.forEach(([x, y, z, width, height, intensity]) => {
+    const panel = new Mesh(new PlaneGeometry(width, height), new MeshBasicMaterial({ color: new Color(0xfff9ef).multiplyScalar(intensity), toneMapped: false }));
+    panel.position.set(x, y, z); panel.lookAt(0, 0, 0); studio.add(panel);
+  });
+  // Dark flags between softboxes produce the narrow edge reflections of glass.
+  [-1, 1].forEach(side => {
+    const flag = new Mesh(new PlaneGeometry(1.4, 7), new MeshBasicMaterial({ color: 0x1c211b, toneMapped: false }));
+    flag.position.set(side * 3.8, 1, -.2); flag.lookAt(0, 0, 0); studio.add(flag);
+  });
+  return studio;
 }
 
 function disposeResources(objects: Object3D[]) {
