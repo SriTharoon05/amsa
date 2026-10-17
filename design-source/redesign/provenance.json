@@ -1,0 +1,69 @@
+{
+  "created": "2026-10-17",
+  "tool": "Built-in ImageGen",
+  "type": "AI-generated concept photography; no real customer or endorsement implied",
+  "reference": "Brand-supplied Amber Keshya Hair Oil Bottle.png; packaging text updated to 52 Ingredients",
+  "processing": "Only transparent bounds trimming, responsive resizing and WebP compression after generation",
+  "assets": [
+    {
+      "path": "public/images/bottle-600.webp",
+      "bytes": 28010,
+      "width": 180,
+      "height": 600
+    },
+    {
+      "path": "public/images/bottle-1200.webp",
+      "bytes": 83842,
+      "width": 360,
+      "height": 1200
+    },
+    {
+      "path": "public/images/ritual-640.webp",
+      "bytes": 25772,
+      "width": 640,
+      "height": 427
+    },
+    {
+      "path": "public/images/ritual-1200.webp",
+      "bytes": 73954,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "path": "public/images/coconut-400.webp",
+      "bytes": 16486,
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "public/images/coconut-700.webp",
+      "bytes": 41644,
+      "width": 700,
+      "height": 700
+    },
+    {
+      "path": "public/images/hibiscus-400.webp",
+      "bytes": 14500,
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "public/images/hibiscus-700.webp",
+      "bytes": 33838,
+      "width": 700,
+      "height": 700
+    },
+    {
+      "path": "public/images/neem-400.webp",
+      "bytes": 14244,
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "public/images/neem-700.webp",
+      "bytes": 37274,
+      "width": 700,
+      "height": 700
+    }
+  ]
+}

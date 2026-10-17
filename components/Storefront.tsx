@@ -1,230 +1,33 @@
 'use client';
-
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Check, Droplets, Flower2, Leaf, Menu, Plus, ShoppingBag, X } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, Leaf, Droplets, Sun, Plus, Minus, Check, Flower2 } from 'lucide-react';
 import { CartProvider, useCart } from './CartProvider';
-import Cart, { Quantity } from './Cart';
-import Checkout from './Checkout';
-import Hero from './Hero';
-import ProductModel from './ProductModel';
+import { PageShell } from './SiteChrome';
 import { ingredientCount } from '@/lib/ingredients';
-import { money, product } from '@/lib/product';
+import { product, money } from '@/lib/product';
 
-function Header() {
-  const cart = useCart();
-  const [menu, setMenu] = useState(false);
-
-  useEffect(() => {
-    if (!menu) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenu(false);
-    };
-    window.addEventListener('keydown', closeOnEscape);
-    return () => window.removeEventListener('keydown', closeOnEscape);
-  }, [menu]);
-
-  return <>
-    <header className="header storefront-header">
-      <nav className="desktop-nav" aria-label="Main navigation">
-        <a href="#shop">The oil</a>
-        <Link href="/ingredients">The ingredients</Link>
-      </nav>
-      <button className="mobile-menu icon-button" aria-label={menu ? 'Close navigation' : 'Open navigation'} aria-expanded={menu} aria-controls="storefront-mobile-nav" onClick={() => setMenu(!menu)}>
-        {menu ? <X size={19} strokeWidth={1.4}/> : <Menu size={19} strokeWidth={1.4}/>}
-      </button>
-      <a className="wordmark" href="#home" aria-label="AMSA Ayurvedic home">AMSA<span>AYURVEDIC</span></a>
-      <div className="header-right">
-        <a href="#ritual" className="ritual-link">The ritual</a>
-        <button className="cart-toggle" onClick={() => { setMenu(false); cart.setDrawer(true); }} aria-label={`Open shopping bag, ${cart.quantity} items`}>
-          <ShoppingBag size={18} strokeWidth={1.4}/>
-          <span className="cart-label">Bag</span>
-          <span className="cart-badge" aria-live="polite">{cart.quantity}</span>
-        </button>
-      </div>
-    </header>
-    {menu && <nav id="storefront-mobile-nav" className="mobile-nav" aria-label="Mobile navigation">
-      <a href="#shop" onClick={() => setMenu(false)}>The oil <ArrowUpRight size={18}/></a>
-      <Link href="/ingredients" onClick={() => setMenu(false)}>The ingredients <ArrowUpRight size={18}/></Link>
-      <a href="#ritual" onClick={() => setMenu(false)}>The ritual <ArrowUpRight size={18}/></a>
-      <span>THE ESSENCE OF NATURE</span>
-    </nav>}
-  </>;
-}
-
+const botanicals=[
+ {id:'coconut',name:'Coconut',latin:'Cocos nucifera',number:'52',copy:'The familiar richness at the heart of the Keshya ritual.'},
+ {id:'hibiscus',name:'Hibiscus',latin:'Hibiscus rosa-sinensis',number:'26',copy:'A vivid flower with a place in our botanical story.'},
+ {id:'neem',name:'Neem',latin:'Azadirachta indica',number:'39',copy:'A leafy evergreen, named openly in our formulation.'},
+];
+function Bottle({className='',priority=false}:{className?:string;priority?:boolean}) {return <img className={className} src="/images/bottle-600.webp" srcSet="/images/bottle-600.webp 180w, /images/bottle-1200.webp 360w" sizes="(max-width:700px) 150px, 200px" width={360} height={1200} alt="AMSA Ayurvedic Keshya Hair Oil, amber bottle with 52-ingredient label, 100 ml" loading={priority?'eager':'lazy'} fetchPriority={priority?'high':undefined} decoding="async"/>;}
+function Hero() {return <section className="hero-section" id="home" aria-labelledby="hero-title"><div className="hero-copy entrance"><p className="eyebrow"><span className="tiny-flower">✳</span> ROOTED IN NATURE. MADE FOR YOU.</p><h1 id="hero-title">Good roots.<br/><em>Great rituals.</em></h1><p className="hero-description">Meet Keshya. {ingredientCount} ingredients, coconut oil,<br className="desktop-break"/> and a little time that’s entirely yours.</p><div className="hero-actions"><a href="#shop" className="button">Discover the hair oil <ArrowUpRight size={18}/></a><Link href="/ingredients" className="text-link">Inside the bottle <ArrowUpRight size={16}/></Link></div><div className="hero-spec"><span className="mini-dot"/>AYURVEDIC HAIR OIL<span>100 ML OF EVERYDAY CARE</span></div></div><div className="hero-visual entrance"><div className="hero-sun"/><div className="hero-orbit"/><span className="visual-note">THE KESHYA RITUAL / Nº 01</span><div className="hero-ingredient hero-coconut"><img src="/images/coconut-400.webp" width={400} height={400} alt="" decoding="async"/><span>Coconut<br/><em>nature’s richness</em></span></div><div className="hero-ingredient hero-hibiscus"><img src="/images/hibiscus-400.webp" width={400} height={400} alt="" decoding="async"/><span>Hibiscus<br/><em>a botanical touch</em></span></div><Bottle className="hero-bottle" priority/><div className="hero-bottle-shadow"/><div className="formula-stamp"><span>THE ESSENCE</span><strong>{ingredientCount}</strong><span>OF NATURE</span></div><span className="visual-bottom"><Leaf size={14}/> Many ingredients. One lovely ritual.</span></div><a href="#story" className="hero-scroll"><ArrowDown size={14}/> TAKE A MOMENT. SCROLL A LITTLE.</a></section>;}
+function Story() {return <><div className="nature-strip"><span>Thoughtfully botanical</span><span aria-hidden="true">✳</span><span>{ingredientCount} ingredients, openly shared</span><span aria-hidden="true">✳</span><span>Rooted in everyday care</span><span aria-hidden="true">✳</span><span>A moment for yourself</span></div><section className="story-section section-pad" id="story"><div className="story-photo"><img src="/images/ritual-640.webp" srcSet="/images/ritual-640.webp 640w, /images/ritual-1200.webp 1200w" sizes="(max-width:700px) 90vw, 45vw" width={1200} height={800} loading="lazy" decoding="async" alt="An illustrative quiet hair-care moment in warm morning light"/><div className="photo-caption"><span>THE ART OF SLOWING DOWN</span><ArrowUpRight size={18}/></div><div className="story-seal" aria-hidden="true"><Sun size={26} strokeWidth={1}/><span>A LITTLE<br/>EVERYDAY CARE</span></div></div><div className="story-copy"><p className="eyebrow">01 / A RETURN TO THE ROOTS</p><h2>For your hair.<br/><em>And your quiet<br/>little moments.</em></h2><p>Some rituals ask for more. We believe in one that asks you to slow down.</p><p>Keshya brings together a world of botanical ingredients in a hair oil made for the simple pleasure of taking care. A little in your palms. A gentle massage. A moment back with yourself.</p><a className="light-text-link" href="#ritual">Find your ritual <ArrowUpRight size={18}/></a><div className="story-signature"><Leaf size={30} strokeWidth={1}/><span>AMSA AYURVEDIC<br/><strong>The essence of nature.</strong></span></div></div></section></>;}
+function Ingredients() {return <section id="ingredients" className="ingredient-section section-pad"><div className="section-heading"><div><p className="eyebrow">02 / A BOTANICAL WORLD, BOTTLED</p><h2>Good things.<br/><em>From the ground up.</em></h2></div><p>Flowers, leaves, roots and seeds.<br/>Meet a few familiar faces in our<br className="desktop-break"/> {ingredientCount}-ingredient formulation.</p></div><div className="botanical-preview">{botanicals.map(item=><Link href={`/ingredients?q=${encodeURIComponent(item.latin)}`} className="ingredient-tile" key={item.id}><div className="ingredient-image"><span className="ingredient-number">Nº {item.number}</span><img src={`/images/${item.id}-400.webp`} srcSet={`/images/${item.id}-400.webp 400w, /images/${item.id}-700.webp 700w`} sizes="(max-width:700px) 85vw, 30vw" width={700} height={700} loading="lazy" decoding="async" alt={`${item.name} botanical ingredient`}/><span className="ingredient-open"><ArrowUpRight size={20}/></span></div><div className="ingredient-info"><h3>{item.name}</h3><i>{item.latin}</i><p>{item.copy}</p></div></Link>)}</div><div className="ingredients-foot"><p>No mystery. Every ingredient, by name.</p><Link className="button button-outline" href="/ingredients">Explore all {ingredientCount} ingredients <ArrowUpRight size={18}/></Link></div></section>;}
 function Product() {
-  const cart = useCart();
-  const [quantity, setQuantity] = useState(1);
-
-  return <section className="product-section section-pad" id="shop" aria-labelledby="product-title">
-    <div className="product-portrait product-model-portrait section-reveal">
-      <ProductModel/>
-    </div>
-    <div className="product-details section-reveal">
-      <p className="eyebrow"><span className="editorial-dot"/> THE JOURNEY BECOMES A RITUAL</p>
-      <h2 id="product-title">A little oil.<br/><em>A little you.</em></h2>
-      <p className="product-intro">Leave a little space in your day. For slow fingertips, a gentle massage, and a moment that belongs to you.</p>
-      <div className="product-name"><h3>Keshya Hair Oil</h3><span>{product.size} / 3.38 fl oz</span></div>
-      <p className="muted">{ingredientCount} ingredients. One considered hair-care ritual.</p>
-      <div className="price-row"><strong>{money(product.price)}</strong><span>Inclusive of all taxes</span></div>
-      <div className="buy-row">
-        <Quantity value={quantity} onChange={setQuantity}/>
-        <button className="button" onClick={() => cart.add(quantity)}>Add to bag <ArrowUpRight size={18} strokeWidth={1.4}/></button>
-      </div>
-      <p className="delivery-note"><Check size={14}/> Complimentary delivery across India</p>
-      <div className="product-accordions">
-        <details><summary>Every ingredient, by name <Plus size={16}/></summary><p>Explore the complete list of {ingredientCount} ingredients supplied for Keshya.<br/><Link className="text-link" href="/ingredients">See all ingredients <ArrowUpRight size={14}/></Link></p></details>
-        <details><summary>Your moment of care <Plus size={16}/></summary><p>Warm a small amount between your palms and gently massage into your scalp and hair. Follow the product label for application and rinsing. Patch test before first use and avoid contact with eyes.</p></details>
-        <details><summary>Delivery & storage <Plus size={16}/></summary><p>Complimentary standard delivery is included in this demo. Store upright in a cool, dry place, away from direct sunlight. Shipping times and return terms will be confirmed when the store launches.</p></details>
-      </div>
-    </div>
-  </section>;
+ const cart=useCart();const [quantity,setQuantity]=useState(1);
+ return <section className="shop-section section-pad" id="shop" aria-labelledby="product-title"><div className="shop-visual"><span className="shop-visual-label">THE ONE. THE EVERYDAY.</span><div className="shop-halo"/><Bottle className="shop-bottle"/><span className="shop-flower" aria-hidden="true">✳</span><span className="shop-volume">100 ml<br/><em>A little goes<br/>into your ritual.</em></span></div><div className="shop-details"><p className="eyebrow">03 / MEET YOUR NEW RITUAL</p><h2 id="product-title">Keshya<br/><em>Hair Oil.</em></h2><p className="product-subtitle">AMSA AYURVEDIC · 100 ML</p><p className="product-description">A world of botanicals. A bottle of everyday care. Make room for a thoughtful hair ritual with {ingredientCount} ingredients and coconut oil.</p><div className="product-points"><span><Leaf size={16}/>{ingredientCount} listed ingredients</span><span><Droplets size={16}/>Coconut oil</span></div><div className="price-row"><strong>{money(product.price)}</strong><span>100 ml · Inclusive of all taxes</span></div><div className="buy-row" id="purchase-actions"><div className="quantity"><button type="button" aria-label="Decrease product quantity" disabled={quantity<=1} onClick={()=>setQuantity(q=>q-1)}><Minus size={15}/></button><span aria-live="polite">{quantity}</span><button type="button" aria-label="Increase product quantity" disabled={quantity>=20} onClick={()=>setQuantity(q=>q+1)}><Plus size={15}/></button></div><button className="button" onClick={()=>cart.add(quantity)}>Add to bag <ArrowUpRight size={18}/></button></div><p className="delivery-note"><Check size={14}/> Complimentary delivery in this store preview</p><div className="product-accordions"><details><summary>What’s inside? <Plus size={17}/></summary><p>See the full list of {ingredientCount} ingredients, including Cocos nucifera, Hibiscus rosa-sinensis and Azadirachta indica. <Link href="/ingredients">Explore the ingredient index ↗</Link></p></details><details><summary>How to make it your ritual <Plus size={17}/></summary><p>Warm a small amount in your palms, part your hair and gently massage into the scalp and lengths. Follow the product label for application and rinsing. Patch test before first use; avoid contact with eyes.</p></details><details><summary>Delivery & thoughtful storage <Plus size={17}/></summary><p>Keep your bottle upright in a cool, dry place away from sunlight. This is a frontend store preview; no payments or shipments are processed. Delivery and return terms will be confirmed before launch.</p></details></div></div></section>;
 }
-
-const botanicalPreview = [
-  { number: '01', title: 'Sesamum indicum', common: 'Sesame', copy: 'A small seed. A familiar botanical name. Discover sesame in the complete Keshya ingredient list.', icon: Leaf, className: 'sesamum' },
-  { number: '26', title: 'Hibiscus rosa-sinensis', common: 'Hibiscus', copy: 'A flower with unmistakable character. One of the many botanical names in the Keshya collection.', icon: Flower2, className: 'hibiscus' },
-  { number: '52', title: 'Cocos nucifera', common: 'Coconut', copy: 'The familiar coconut, with a place in the formulation. Explore its name alongside every other ingredient.', icon: Droplets, className: 'coconut' },
-] as const;
-
-function Ingredients() {
-  return <section id="ingredients" className="ingredients section-pad" aria-labelledby="botanical-title">
-    <div className="section-heading section-reveal">
-      <div><p className="eyebrow">A BOTANICAL INDEX</p><h2 id="botanical-title">Many beginnings.<br/><em>One Keshya.</em></h2></div>
-      <div className="ingredients-heading-note"><span>{ingredientCount}</span><p>Individual ingredients.<br/>Every name, openly shared.</p></div>
-    </div>
-    <div className="ingredient-grid">
-      {botanicalPreview.map(({ number, title, common, copy, icon: Icon, className }) => <article className={`ingredient-card ${className} section-reveal`} key={number}>
-        <div className="ingredient-top"><span>INDEX / {number}</span><Icon size={22} strokeWidth={1}/></div>
-        <div className="botanical-art" aria-hidden="true"><Icon strokeWidth={0.55}/><span>{number}</span></div>
-        <p className="eyebrow">{common}</p>
-        <h3>{title}</h3>
-        <p>{copy}</p>
-      </article>)}
-    </div>
-    <div className="ingredient-preview-action section-reveal">
-      <p>A closer look at everything that goes in.</p>
-      <Link className="text-link" href="/ingredients">See all ingredients <span className="ingredient-cta-count">{ingredientCount}</span><ArrowUpRight size={19}/></Link>
-    </div>
-  </section>;
-}
-
-const ritualSteps = [
-  ['01', 'Make a little space.', 'Find a comfortable moment. Pour a small amount of oil into your palms and gently rub them together.'],
-  ['02', 'Slow your fingertips.', 'Massage your scalp with gentle, circular movements. Work through your hair, taking your time.'],
-  ['03', 'Return to your day.', 'Follow the product label for how long to leave the oil and how to rinse. Make care a moment you can return to.'],
-] as const;
-
-function Ritual() {
-  return <section id="ritual" className="ritual section-pad" aria-labelledby="ritual-title">
-    <div className="ritual-intro section-reveal">
-      <p className="eyebrow">THE ART OF TAKING YOUR TIME</p>
-      <h2 id="ritual-title">Care is<br/><em>a quiet thing.</em></h2>
-      <p>No grand gestures. Just a few thoughtful minutes, and a little room to breathe.</p>
-      <div className="ritual-signature"><Leaf size={22} strokeWidth={0.8}/><span>A MOMENT, JUST FOR YOU</span></div>
-    </div>
-    <div className="ritual-steps">
-      {ritualSteps.map(([number, title, copy]) => <div className="ritual-step section-reveal" key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}
-      <p className="ritual-note">Patch test before first use. Avoid contact with eyes.</p>
-    </div>
-  </section>;
-}
-
-function Footer() {
-  const [subscribed, setSubscribed] = useState(false);
-
-  return <footer className="footer">
-    <div className="footer-top section-reveal">
-      <div><p className="eyebrow">FROM OUR WORLD, TO YOURS</p><h2>Stay a little<br/><em>closer to nature.</em></h2></div>
-      <div className="newsletter">
-        <p>Notes on botanicals, small rituals,<br/>and making a little time for yourself.</p>
-        {subscribed ? <p className="newsletter-success" role="status"><Check size={18}/> Thank you. Your demo signup is complete.</p> : <form onSubmit={event => { event.preventDefault(); setSubscribed(true); }}>
-          <label className="sr-only" htmlFor="newsletter-email">Email address</label>
-          <input id="newsletter-email" type="email" autoComplete="email" required placeholder="Your email address"/>
-          <button type="submit">Join the circle <ArrowUpRight size={18}/></button>
-        </form>}
-        <small>Demo signup only. Your email is not sent or stored.</small>
-      </div>
-    </div>
-    <div className="footer-brandline" aria-hidden="true"><span>AMSA</span><Leaf strokeWidth={0.6}/></div>
-    <div className="footer-bottom">
-      <span>© {new Date().getFullYear()} AMSA Ayurvedic</span>
-      <Link href="/ingredients">Ingredient index <ArrowUpRight size={12}/></Link>
-      <a href="#shop">Discover Keshya <ArrowUpRight size={12}/></a>
-      <a className="footer-return" href="#home">Back to the beginning <ArrowRight size={13}/></a>
-    </div>
-  </footer>;
-}
-
+function Ritual() {return <section id="ritual" className="ritual-section section-pad"><div className="ritual-top"><p className="eyebrow">04 / LESS RUSH. MORE RITUAL.</p><h2>Small moments.<br/><em>Beautifully yours.</em></h2><p>A little care doesn’t need a grand occasion.<br/>Just a little space in your day.</p></div><div className="ritual-steps">{[{n:'01',icon:Droplets,title:'Warm a little.',text:'Pour a small amount into your palms. Let the ritual begin slowly.'},{n:'02',icon:Flower2,title:'Find your flow.',text:'Part your hair and gently massage your scalp with your fingertips.'},{n:'03',icon:Sun,title:'Take your time.',text:'Enjoy the pause. Follow the bottle’s instructions for rinsing and care.'}].map(({n,icon:Icon,title,text})=><article key={n}><div className="ritual-step-top"><span>{n}</span><Icon size={30} strokeWidth={1}/></div><h3>{title}</h3><p>{text}</p></article>)}</div><p className="ritual-note">Your ritual is personal. Always patch test and follow your product label.</p></section>;}
+function Questions() {return <section className="faq-section section-pad"><div><p className="eyebrow">A FEW GOOD QUESTIONS</p><h2>A little<br/><em>more clarity.</em></h2><Leaf size={44} strokeWidth={1} className="faq-leaf"/></div><div className="faq-list">{[['Where can I find the complete ingredients?','Every one of the 52 ingredient names supplied for Keshya is listed in our ingredient index. You can search or browse the complete list.'],['How much oil should I use?','Start with a small amount and adjust to your hair length and preference. Follow the directions on your product label.'],['How should I store my bottle?','Store upright in a cool, dry place away from direct sunlight. Close the cap after use.'],['Can I place a real order here?','This website is currently a frontend preview. You can try the shopping bag and demo checkout, but no payment is collected and no order is shipped.']].map(([q,a])=><details key={q}><summary>{q}<Plus size={17}/></summary><p>{a}</p></details>)}</div></section>;}
 function FloatingCTA() {
-  const cart = useCart();
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    let frame = 0;
-    const check = () => {
-      frame = 0;
-      const journey = document.getElementById('home');
-      if (journey) setVisible(journey.getBoundingClientRect().bottom < 0);
-    };
-    const schedule = () => { if (!frame) frame = window.requestAnimationFrame(check); };
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    check();
-    return () => {
-      window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  const open = visible && !cart.drawer && !cart.checkout;
-  return <div className={`floating-cta ${open ? 'visible' : ''}`} inert={!open}>
-    <div><span>Keshya Hair Oil</span><small>{product.size} · {ingredientCount} ingredients</small></div>
-    <button className="button" onClick={() => cart.add()}>Add to bag — {money(product.price)} <ArrowUpRight size={16}/></button>
-  </div>;
+ const cart=useCart();const [visible,setVisible]=useState(false);const region=useRef(false);
+ useEffect(()=>{const hero=document.getElementById('home');const shop=document.getElementById('purchase-actions');if(!hero||!shop)return;let past=false;const update=()=>setVisible(past&&!region.current);const first=new IntersectionObserver(entries=>{past=entries[0].boundingClientRect.bottom<=0;update();});const second=new IntersectionObserver(entries=>{region.current=entries[0].isIntersecting;update();},{threshold:0});first.observe(hero);second.observe(shop);return()=>{first.disconnect();second.disconnect();};},[]);
+ const open=visible&&!cart.drawer&&!cart.checkout;
+ return <div className={`floating-cta ${open?'visible':''}`} inert={!open}><div><span>Keshya Hair Oil</span><small>100 ml · {ingredientCount} ingredients</small></div><button className="button" onClick={()=>cart.add()}>Add to bag · {money(product.price)}<ArrowUpRight size={16}/></button></div>;
 }
+function Content(){return <PageShell><main id="main-content"><Hero/><Story/><Ingredients/><Product/><Ritual/><Questions/></main><FloatingCTA/></PageShell>;}
+export default function Storefront(){return <CartProvider><Content/></CartProvider>;}
 
-function PageContent() {
-  const page = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = page.current;
-    if (!root || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-    const elements = root.querySelectorAll('.section-reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    root.classList.add('storefront-motion-ready');
-    elements.forEach(element => observer.observe(element));
-    return () => {
-      observer.disconnect();
-      root.classList.remove('storefront-motion-ready');
-    };
-  }, []);
-
-  return <div className="storefront" ref={page}>
-    <a href="#shop" className="skip-link">Skip to product</a>
-    <Header/>
-    <main>
-      <Hero/>
-      <div className="values-strip"><span><Leaf size={16} strokeWidth={1}/>{ingredientCount} ingredients</span><span><Droplets size={16} strokeWidth={1}/>Coconut oil</span><span><Flower2 size={16} strokeWidth={1}/>A botanical ritual</span><span>{product.size} of considered care</span></div>
-      <Product/>
-      <Ingredients/>
-      <Ritual/>
-    </main>
-    <Footer/>
-    <FloatingCTA/>
-    <Cart/>
-    <Checkout/>
-  </div>;
-}
-
-export default function Storefront() {
-  return <CartProvider><PageContent/></CartProvider>;
-}
