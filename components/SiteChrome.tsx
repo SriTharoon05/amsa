@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
+import BrandBloom from './BrandBloom';
 import dynamic from 'next/dynamic';
 import { ArrowUpRight, Menu, X, ShoppingBag, Leaf, Check } from 'lucide-react';
 import { useCart } from './CartProvider';
@@ -22,7 +23,8 @@ export function ShopDialogs() {
 }
 export function SiteFooter() {
  const [subscribed,setSubscribed]=useState(false);
- return <footer className="site-footer"><div className="footer-top"><div><p className="eyebrow">LET GOOD THINGS TAKE ROOT</p><h2>A little closer<br/>to <em>nature.</em></h2></div><div className="newsletter">{subscribed?<div className="newsletter-confirmation" role="status"><Check size={23}/><div><strong>You’re on the list.</strong><p>Demo signup complete. Your email hasn’t been stored.</p></div></div>:<><p>Notes on nature, thoughtful rituals<br/>and making a little time for yourself.</p><form onSubmit={e=>{e.preventDefault();setSubscribed(true);}}><label className="sr-only" htmlFor="newsletter-email">Email address</label><input id="newsletter-email" type="email" required placeholder="Your email address" autoComplete="email"/><button aria-label="Join the newsletter" type="submit">Join us <ArrowUpRight size={18}/></button></form><small>A preview signup. No emails are sent.</small></>}</div></div><div className="footer-links"><Link href="/#shop">Shop Keshya <ArrowUpRight size={13}/></Link><Link href="/ingredients">The ingredient index <ArrowUpRight size={13}/></Link><Link href="/#ritual">The daily ritual <ArrowUpRight size={13}/></Link><a href="#top">Back to top ↑</a></div><div className="footer-bigmark" aria-hidden="true">AMSA<span>✳</span></div><div className="footer-bottom"><span>© {new Date().getFullYear()} AMSA Ayurvedic</span><span>The essence of nature.</span><span>Frontend store preview · No real orders</span></div></footer>;
+ return <footer className="site-footer"><div className="footer-top"><div><p className="eyebrow">LET GOOD THINGS TAKE ROOT</p><h2>A little closer<br/>to <em>nature.</em></h2></div><div className="newsletter">{subscribed?<div className="newsletter-confirmation" role="status"><Check size={23}/><div><strong>You’re on the list.</strong><p>Demo signup complete. Your email hasn’t been stored.</p></div></div>:<><p>Notes on nature, thoughtful rituals<br/>and making a little time for yourself.</p><form onSubmit={e=>{e.preventDefault();setSubscribed(true);}}><label className="sr-only" htmlFor="newsletter-email">Email address</label><input id="newsletter-email" type="email" required placeholder="Your email address" autoComplete="email"/><button aria-label="Join the newsletter" type="submit">Join us <ArrowUpRight size={18}/></button></form><small>A preview signup. No emails are sent.</small></>}</div></div><div className="footer-links"><Link href="/#shop">Shop Keshya <ArrowUpRight size={13}/></Link><Link href="/ingredients">The ingredient index <ArrowUpRight size={13}/></Link><Link href="/#ritual">The daily ritual <ArrowUpRight size={13}/></Link><a href="#top">Back to top ↑</a></div><div className="footer-bigmark" aria-hidden="true">AMSA<span><BrandBloom/></span></div><div className="footer-bottom"><span>© {new Date().getFullYear()} AMSA Ayurvedic</span><span>The essence of nature.</span><span>Frontend store preview · No real orders</span></div></footer>;
 }
 export function PageShell({children}:{children:ReactNode}) {return <><a className="skip-link" href="#main-content">Skip to content</a><div id="top"/><SiteHeader/>{children}<SiteFooter/><ShopDialogs/></>;}
+
 

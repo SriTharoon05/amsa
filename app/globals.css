@@ -34,3 +34,5 @@
 /* Readable metadata and comfortable mobile form controls. */
 .hero-spec,.hero-scroll,.visual-note,.visual-bottom{color:#5a6d49}.ingredient-info>i,.shop-volume em,.ritual-note{color:#5a6d49}.product-description,.price-row>span,.delivery-note{color:#526640}.story-photo::after{content:'';position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(transparent,#13291d66);border-radius:0 0 5px 5px;pointer-events:none}.photo-caption{z-index:1}.story-seal{z-index:2}
 @media(max-width:700px){.hero-description,.story-copy>p:not(.eyebrow),.product-description,.ritual-steps p,.faq-list p{font-size:13px}.ingredient-info>p{font-size:12px}.newsletter input{font-size:16px}.quantity button{min-width:35px}.site-header .bag-button{min-height:44px}}
+/* SVG geometry stays identical on iOS, Android and desktop, without emoji fonts. */
+.brand-bloom{display:block;width:1em;height:1em;flex-shrink:0}
