@@ -46,3 +46,17 @@ The price is INR 1,290 for 100 ml, editable in `lib/product.ts`. This remains a 
 ## Validation limits
 
 Production compilation, TypeScript, ingredient filter checks, responsive image metadata, static export routes, bundle exclusions and media budgets are checked locally. Browser automation is blocked by policy in this environment; actual browser rendering, mobile interaction and device performance scores are not claimed as verified. No Lighthouse score is invented.
+
+## Ingredient card images
+
+Every ingredient has a distinct local WebP thumbnail, served only on `/ingredients`. The matching helper is `lib/ingredient-images.ts`; existing search, letter filters, sorting and card/list modes all retain the same cached image URL for each ingredient. Grid cards show a reserved 4:3 photo area, while list rows reuse the same file as a compact thumbnail.
+
+The native photos, exact generation prompts and optimized per-file manifest are retained in `design-source/ingredient-photos`. Existing coconut, hibiscus and neem photographs are reused from the redesign source. Other images are representative AI-generated ingredient photography; pictured plant parts do not imply an extraction specification. That distinction is also stated on the directory page.
+
+Run `node scripts/optimize-ingredient-photos.mjs` to resize and compress the native sources. Output is fixed at 240×180 with a strict 6 KB per-image maximum and 250 KB total budget for all 52 thumbnails. Each image uses native `loading="lazy"`, `decoding="async"` and low fetch priority, with explicit dimensions to reserve space. No third-party image service, base64 bundle payload, animation library, observer or new JavaScript dependency is added. The homepage does not reference these images.
+
+The storefront verifier checks the complete name/image mapping, all 52 distinct files, dimensions and byte budgets, lazy-loading attributes, deployed asset existence and the unchanged original homepage photo budget.
+
+Full-size newly generated ingredient source PNGs are retained locally but ignored by Git to keep repository transfers small. The optimized thumbnails, exact image-generation prompts and byte/hash manifest are versioned. Recompression requires the local native source cache; the deployed website only needs the tracked WebP files.
+
+Directory styles are imported by the ingredients route rather than the root layout, so the homepage does not load the ingredient-card stylesheet.

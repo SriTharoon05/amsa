@@ -1,0 +1,423 @@
+{
+  "created": "2026-10-24",
+  "mode": "built-in image_gen",
+  "note": "Representative AI-generated ingredient photography. Plant part pictured is not an extraction specification.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Sesamum indicum",
+      "slug": "01-sesamum-indicum",
+      "subject": "Ivory oval sesame seeds, tapered tips and subtle testa texture",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Sesamum indicum. Ivory oval sesame seeds, tapered tips and subtle testa texture.",
+      "reuse": null
+    },
+    {
+      "id": 2,
+      "name": "Nigella sativa",
+      "slug": "02-nigella-sativa",
+      "subject": "Small angular black cumin seeds with matte ridged coats",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Nigella sativa. Small angular black cumin seeds with matte ridged coats.",
+      "reuse": null
+    },
+    {
+      "id": 3,
+      "name": "Ricinus communis",
+      "slug": "03-ricinus-communis",
+      "subject": "A few oval castor seeds, glossy mottled brown and cream seed coats and pale raised caruncles.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Ricinus communis. A few oval castor seeds, glossy mottled brown and cream seed coats and pale raised caruncles..",
+      "reuse": null
+    },
+    {
+      "id": 4,
+      "name": "Tocopherol",
+      "slug": "04-tocopherol",
+      "subject": "A tiny clear shallow glass dish containing golden amber vitamin E oil, with two round amber oil drops alongside. This is Tocopherol, a vitamin, not a plant or flower.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Tocopherol. A tiny clear shallow glass dish containing golden amber vitamin E oil, with two round amber oil drops alongside. This is Tocopherol, a vitamin, not a plant or flower..",
+      "reuse": null
+    },
+    {
+      "id": 5,
+      "name": "Alkanna tinctoria",
+      "slug": "05-alkanna-tinctoria",
+      "subject": "A few dark red-brown alkanet root fragments with a reddish cut surface and natural rough bark.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Alkanna tinctoria. A few dark red-brown alkanet root fragments with a reddish cut surface and natural rough bark..",
+      "reuse": null
+    },
+    {
+      "id": 6,
+      "name": "Senna auriculata",
+      "slug": "06-senna-auriculata",
+      "subject": "A small fresh flowering avaram senna sprig with bright yellow five-petalled blossoms, visible brown anthers, and paired oval green leaflets.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Senna auriculata. A small fresh flowering avaram senna sprig with bright yellow five-petalled blossoms, visible brown anthers, and paired oval green leaflets..",
+      "reuse": null
+    },
+    {
+      "id": 7,
+      "name": "Jasminum officinale",
+      "slug": "07-jasminum-officinale",
+      "subject": "A small fresh cluster of white Jasminum officinale jasmine flowers, five narrow pointed petals and a few delicate green leaflets.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Jasminum officinale. A small fresh cluster of white Jasminum officinale jasmine flowers, five narrow pointed petals and a few delicate green leaflets..",
+      "reuse": null
+    },
+    {
+      "id": 8,
+      "name": "Rosa damascena",
+      "slug": "08-rosa-damascena",
+      "subject": "One pale blush Damask rose, many loosely layered natural petals and a short stem with two serrated green rose leaves.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Rosa damascena. One pale blush Damask rose, many loosely layered natural petals and a short stem with two serrated green rose leaves..",
+      "reuse": null
+    },
+    {
+      "id": 9,
+      "name": "Mentha piperita",
+      "slug": "09-mentha-piperita",
+      "subject": "Serrated opposite peppermint leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Mentha piperita. Serrated opposite peppermint leaves.",
+      "reuse": null
+    },
+    {
+      "id": 10,
+      "name": "Coriandrum sativum",
+      "slug": "10-coriandrum-sativum",
+      "subject": "Spherical coriander fruits with longitudinal ribs",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Coriandrum sativum. Spherical coriander fruits with longitudinal ribs.",
+      "reuse": null
+    },
+    {
+      "id": 11,
+      "name": "Laurus nobilis",
+      "slug": "11-laurus-nobilis",
+      "subject": "Smooth leathery lanceolate bay leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Laurus nobilis. Smooth leathery lanceolate bay leaves.",
+      "reuse": null
+    },
+    {
+      "id": 12,
+      "name": "Piper betle",
+      "slug": "12-piper-betle",
+      "subject": "Broad pointed heart-shaped betel leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Piper betle. Broad pointed heart-shaped betel leaves.",
+      "reuse": null
+    },
+    {
+      "id": 13,
+      "name": "Lawsonia inermis",
+      "slug": "13-lawsonia-inermis",
+      "subject": "Small paired entire henna leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Lawsonia inermis. Small paired entire henna leaves.",
+      "reuse": null
+    },
+    {
+      "id": 14,
+      "name": "Eclipta prostrata",
+      "slug": "14-eclipta-prostrata",
+      "subject": "Small white Eclipta ray florets around a pale disk",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Eclipta prostrata. Small white Eclipta ray florets around a pale disk.",
+      "reuse": null
+    },
+    {
+      "id": 15,
+      "name": "Sphagneticola trilobata",
+      "slug": "15-sphagneticola-trilobata",
+      "subject": "Yellow creeping oxeye daisy with broad ray florets",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Sphagneticola trilobata. Yellow creeping oxeye daisy with broad ray florets.",
+      "reuse": null
+    },
+    {
+      "id": 16,
+      "name": "Phyllanthus emblica",
+      "slug": "16-phyllanthus-emblica",
+      "subject": "Two pale green amla fruits with six longitudinal lobes",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Phyllanthus emblica. Two pale green amla fruits with six longitudinal lobes.",
+      "reuse": null
+    },
+    {
+      "id": 17,
+      "name": "Mimusops elengi",
+      "slug": "17-mimusops-elengi",
+      "subject": "Several small creamy white star-like bakul flowers, many narrow pointed petals, with two glossy elliptical Mimusops leaves.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Mimusops elengi. Several small creamy white star-like bakul flowers, many narrow pointed petals, with two glossy elliptical Mimusops leaves..",
+      "reuse": null
+    },
+    {
+      "id": 18,
+      "name": "Cinnamomum verum",
+      "slug": "18-cinnamomum-verum",
+      "subject": "Three rolled papery cinnamon quills with visible spirals",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Cinnamomum verum. Three rolled papery cinnamon quills with visible spirals.",
+      "reuse": null
+    },
+    {
+      "id": 19,
+      "name": "Matricaria chamomilla",
+      "slug": "19-matricaria-chamomilla",
+      "subject": "Chamomile: thin ivory rays and raised golden pollen cone",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Matricaria chamomilla. Chamomile: thin ivory rays and raised golden pollen cone.",
+      "reuse": null
+    },
+    {
+      "id": 20,
+      "name": "Santalum album",
+      "slug": "20-santalum-album",
+      "subject": "A small arrangement of pale tan sandalwood heartwood chips, one short sandalwood stick and a little wood shaving. Warm natural wood grain.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Santalum album. A small arrangement of pale tan sandalwood heartwood chips, one short sandalwood stick and a little wood shaving. Warm natural wood grain..",
+      "reuse": null
+    },
+    {
+      "id": 21,
+      "name": "Artemisia pallens",
+      "slug": "21-artemisia-pallens",
+      "subject": "Finely divided silvery davana foliage",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Artemisia pallens. Finely divided silvery davana foliage.",
+      "reuse": null
+    },
+    {
+      "id": 22,
+      "name": "Nelumbo nucifera",
+      "slug": "22-nelumbo-nucifera",
+      "subject": "Pointed blush lotus petals in three ascending whorls",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Nelumbo nucifera. Pointed blush lotus petals in three ascending whorls.",
+      "reuse": null
+    },
+    {
+      "id": 23,
+      "name": "Salvia rosmarinus",
+      "slug": "23-salvia-rosmarinus",
+      "subject": "Woody rosemary stem with narrow recurved needle leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Salvia rosmarinus. Woody rosemary stem with narrow recurved needle leaves.",
+      "reuse": null
+    },
+    {
+      "id": 24,
+      "name": "Aloe barbadensis Miller",
+      "slug": "24-aloe-barbadensis-miller",
+      "subject": "Curved fleshy aloe blades with small pale marginal teeth",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Aloe barbadensis Miller. Curved fleshy aloe blades with small pale marginal teeth.",
+      "reuse": null
+    },
+    {
+      "id": 25,
+      "name": "Murraya koenigii",
+      "slug": "25-murraya-koenigii",
+      "subject": "Pinnate curry leaf stem with eight pointed leaflets",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Murraya koenigii. Pinnate curry leaf stem with eight pointed leaflets.",
+      "reuse": null
+    },
+    {
+      "id": 26,
+      "name": "Hibiscus rosa-sinensis",
+      "slug": "26-hibiscus-rosa-sinensis",
+      "subject": "Five ruffled crimson hibiscus petals, pollen column and five stigma lobes",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Hibiscus rosa-sinensis. Five ruffled crimson hibiscus petals, pollen column and five stigma lobes.",
+      "reuse": "design-source/redesign/hibiscus-native.png"
+    },
+    {
+      "id": 27,
+      "name": "Acalypha indica",
+      "slug": "27-acalypha-indica",
+      "subject": "Serrate ovate Acalypha foliage",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Acalypha indica. Serrate ovate Acalypha foliage.",
+      "reuse": null
+    },
+    {
+      "id": 28,
+      "name": "Ocimum tenuiflorum",
+      "slug": "28-ocimum-tenuiflorum",
+      "subject": "Opposite scalloped holy basil leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Ocimum tenuiflorum. Opposite scalloped holy basil leaves.",
+      "reuse": null
+    },
+    {
+      "id": 29,
+      "name": "Prunus dulcis",
+      "slug": "29-prunus-dulcis",
+      "subject": "Three elongated almonds with fine skin furrows and pointed tips",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Prunus dulcis. Three elongated almonds with fine skin furrows and pointed tips.",
+      "reuse": null
+    },
+    {
+      "id": 30,
+      "name": "Cucurbita pepo",
+      "slug": "30-cucurbita-pepo",
+      "subject": "Flat green pumpkin kernels with fine peripheral contours",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Cucurbita pepo. Flat green pumpkin kernels with fine peripheral contours.",
+      "reuse": null
+    },
+    {
+      "id": 31,
+      "name": "Ocimum basilicum",
+      "slug": "31-ocimum-basilicum",
+      "subject": "Broad soft cupped sweet basil leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Ocimum basilicum. Broad soft cupped sweet basil leaves.",
+      "reuse": null
+    },
+    {
+      "id": 32,
+      "name": "Capsicum annuum",
+      "slug": "32-capsicum-annuum",
+      "subject": "Tapering curved red chili with folded green calyx",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Capsicum annuum. Tapering curved red chili with folded green calyx.",
+      "reuse": null
+    },
+    {
+      "id": 33,
+      "name": "Coffea arabica",
+      "slug": "33-coffea-arabica",
+      "subject": "Roasted coffee beans with sculpted central sutures",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Coffea arabica. Roasted coffee beans with sculpted central sutures.",
+      "reuse": null
+    },
+    {
+      "id": 34,
+      "name": "Camellia sinensis",
+      "slug": "34-camellia-sinensis",
+      "subject": "Serrate glossy tea leaves with alternating attachment",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Camellia sinensis. Serrate glossy tea leaves with alternating attachment.",
+      "reuse": null
+    },
+    {
+      "id": 35,
+      "name": "Chrysopogon zizanioides",
+      "slug": "35-chrysopogon-zizanioides",
+      "subject": "A small tied bundle of fine tan vetiver roots with a few delicate green grass blades, earthy real root texture.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Chrysopogon zizanioides. A small tied bundle of fine tan vetiver roots with a few delicate green grass blades, earthy real root texture..",
+      "reuse": null
+    },
+    {
+      "id": 36,
+      "name": "Cassytha filiformis",
+      "slug": "36-cassytha-filiformis",
+      "subject": "Delicate tangled golden yellow Cassytha filiformis twining stems, almost leafless, with a few tiny pale buds.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Cassytha filiformis. Delicate tangled golden yellow Cassytha filiformis twining stems, almost leafless, with a few tiny pale buds..",
+      "reuse": null
+    },
+    {
+      "id": 37,
+      "name": "Psoralea corylifolia",
+      "slug": "37-psoralea-corylifolia",
+      "subject": "Dark rugose Psoralea seeds",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Psoralea corylifolia. Dark rugose Psoralea seeds.",
+      "reuse": null
+    },
+    {
+      "id": 38,
+      "name": "Rubia cordifolia",
+      "slug": "38-rubia-cordifolia",
+      "subject": "A few irregular red-brown Indian madder root pieces showing a distinctly reddish inner cut surface.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Rubia cordifolia. A few irregular red-brown Indian madder root pieces showing a distinctly reddish inner cut surface..",
+      "reuse": null
+    },
+    {
+      "id": 39,
+      "name": "Azadirachta indica",
+      "slug": "39-azadirachta-indica",
+      "subject": "Pinnate neem leaflets with serrated pointed margins",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Azadirachta indica. Pinnate neem leaflets with serrated pointed margins.",
+      "reuse": "design-source/redesign/neem-native.png"
+    },
+    {
+      "id": 40,
+      "name": "Glycyrrhiza glabra",
+      "slug": "40-glycyrrhiza-glabra",
+      "subject": "A few licorice root sticks with brown bark and one bright pale-yellow freshly cut cross section.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Glycyrrhiza glabra. A few licorice root sticks with brown bark and one bright pale-yellow freshly cut cross section..",
+      "reuse": null
+    },
+    {
+      "id": 41,
+      "name": "Cyperus rotundus",
+      "slug": "41-cyperus-rotundus",
+      "subject": "A small cluster of nutgrass rhizome tubers with fine fibrous roots and a short green sedge blade.",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Cyperus rotundus. A small cluster of nutgrass rhizome tubers with fine fibrous roots and a short green sedge blade..",
+      "reuse": null
+    },
+    {
+      "id": 42,
+      "name": "Beta vulgaris",
+      "slug": "42-beta-vulgaris",
+      "subject": "Beetroot with irregular taproot and three leaf stalks",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Beta vulgaris. Beetroot with irregular taproot and three leaf stalks.",
+      "reuse": null
+    },
+    {
+      "id": 43,
+      "name": "Daucus carota",
+      "slug": "43-daucus-carota",
+      "subject": "Orange carrot root with delicate divided green top",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Daucus carota. Orange carrot root with delicate divided green top.",
+      "reuse": null
+    },
+    {
+      "id": 44,
+      "name": "Helianthus annuus",
+      "slug": "44-helianthus-annuus",
+      "subject": "Sunflower yellow ray petals and textured dark seed disk",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Helianthus annuus. Sunflower yellow ray petals and textured dark seed disk.",
+      "reuse": null
+    },
+    {
+      "id": 45,
+      "name": "Clitoria ternatea",
+      "slug": "45-clitoria-ternatea",
+      "subject": "Butterfly pea broad indigo standard petal and pale throat",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Clitoria ternatea. Butterfly pea broad indigo standard petal and pale throat.",
+      "reuse": null
+    },
+    {
+      "id": 46,
+      "name": "Piper nigrum",
+      "slug": "46-piper-nigrum",
+      "subject": "Round wrinkled dark peppercorns",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Piper nigrum. Round wrinkled dark peppercorns.",
+      "reuse": null
+    },
+    {
+      "id": 47,
+      "name": "Linum usitatissimum",
+      "slug": "47-linum-usitatissimum",
+      "subject": "Smooth flattened flax seeds with pointed ends",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Linum usitatissimum. Smooth flattened flax seeds with pointed ends.",
+      "reuse": null
+    },
+    {
+      "id": 48,
+      "name": "Syzygium aromaticum",
+      "slug": "48-syzygium-aromaticum",
+      "subject": "Five cloves: tapered dark stalks, four sepals and rounded buds",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Syzygium aromaticum. Five cloves: tapered dark stalks, four sepals and rounded buds.",
+      "reuse": null
+    },
+    {
+      "id": 49,
+      "name": "Macrotyloma uniflorum",
+      "slug": "49-macrotyloma-uniflorum",
+      "subject": "Brown oblong horse gram seeds with hilum sutures",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Macrotyloma uniflorum. Brown oblong horse gram seeds with hilum sutures.",
+      "reuse": null
+    },
+    {
+      "id": 50,
+      "name": "Cinnamomum camphora",
+      "slug": "50-cinnamomum-camphora",
+      "subject": "Smooth pointed leathery camphor leaves",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Cinnamomum camphora. Smooth pointed leathery camphor leaves.",
+      "reuse": null
+    },
+    {
+      "id": 51,
+      "name": "Citrus sinensis",
+      "slug": "51-citrus-sinensis",
+      "subject": "Orange citrus fruit with gently dimpled rind and leaf",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Citrus sinensis. Orange citrus fruit with gently dimpled rind and leaf.",
+      "reuse": null
+    },
+    {
+      "id": 52,
+      "name": "Cocos nucifera",
+      "slug": "52-cocos-nucifera",
+      "subject": "Hollow coconut half: fibrous husk, testa and thick white endosperm",
+      "prompt": "Use case: photorealistic-natural. Asset type: small Ayurvedic ingredient directory thumbnail. Make ONE clean, realistic botanical still-life photograph of the specified ingredient. Center the complete small specimen on a solid pale warm ivory studio surface (#eeefde), with soft diffuse light, subtle contact shadow and 12% clear margin. Square composition, large recognizable subject occupying the middle 75% of the image. Real natural texture, premium understated editorial photography. No words, labels, numbers, border, collage, packaging or watermark. No 3D illustration. This is representative ingredient imagery, not a dosage or extraction specification. Subject: Cocos nucifera. Hollow coconut half: fibrous husk, testa and thick white endosperm.",
+      "reuse": "design-source/redesign/coconut-native.png"
+    }
+  ]
+}

@@ -6,3 +6,6 @@ out/
 !.env.example
 .sites-runtime/
 test-results/
+
+# Full-size generated ingredient sources stay local; only optimized thumbnails are versioned.
+design-source/ingredient-photos/*-native.png
